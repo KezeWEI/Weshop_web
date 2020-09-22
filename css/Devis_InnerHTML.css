@@ -1,0 +1,96 @@
+input[type="checkbox"] {
+    /*
+    display: none;这样会让tab键无法选取自定义的checkbox，所以使用下面的方法
+    clip 属性剪裁绝对定位元素。
+    */
+    position: absolute;
+    clip: rect(0, 0, 0, 0)
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0)
+}
+
+input[type="checkbox"]+.circle {
+    display: inline-block;
+    font-weight: bold;
+    width: 90%;
+    text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+input[type="radio"]+.circle {
+    display: inline-block;
+    font-weight: bold;
+    width: 90%;
+    text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.circle::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #EEE;
+    vertical-align: middle;
+    margin-right: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    transition: background ease-in .5s;
+}    
+
+input[type="checkbox"]:checked+.circle::before {
+    background-color: #40BFF5;
+    border: 5px #EEE solid;
+}
+input[type="radio"]:checked+.circle::before {
+    background-color: #40BFF5;
+    border: 5px #EEE solid;
+}
+.pricing-table {
+    padding-left:20px;
+    padding-right:20px;
+    height: 720px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+/* ________修改__________ */
+.colForm{
+    min-width: 300px;
+}
+.pricing-table:hover{
+    box-shadow: 0 21px 65px 0px rgba(0, 0, 0, 0.12);
+}
+@media only screen and (max-width: 480px) { 
+    .pricing-table { margin-bottom: 10px }
+}
+.pricing-table.active { box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) }
+.pricing-table h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+@media (min-width: 1200px) {
+    .modal-xlg {
+        width: 90%; 
+    }
+}
