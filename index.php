@@ -26,7 +26,7 @@
     </head>
     
     <body>
-        <!--导航�?-->
+        <!--导航栏-->
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
                 <img src="images/title.png" class="Accueil">
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <!--banner部分结�?�-->
+        <!--banner部分结束-->
         <!--分割线-->
         <section class="ftco-section ftco-section-2">
             <div class="overlay"></div>
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </section>
-        <!--分割线结�?�-->
+        <!--分割线结束-->
 
         <!--三点优势部分-->
         <section class="ftco-section ftco-services">
@@ -146,7 +146,7 @@
                 </div>
             </div>
         </section>
-        <!--三点优势部分结�?�-->
+        <!--三点优势部分结束-->
         <!--分割线-->
         <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
             <div class="container">
@@ -190,9 +190,9 @@
                 </div>
             </div>
         </section>	
-        <!--分割线部分结�?�-->
+        <!--分割线部分结束-->
 
-        <!--陈列产�?部分-->
+        <!--陈列产品部分-->
         <section class="ftco-section">
             <div class="container-fluid">
                 <div class="row justify-content-center mb-5 pb-5">
@@ -238,11 +238,11 @@
                 </div>
             </div>
         </section>
-        <!--产�?部分结�?�-->
+        <!--产品部分结束-->
 
         <!--Devis部分-->
         <section class="ftco-section bg-light" id="devis">
-            <!-- 加上container-fluid页�?��?超出 -->
+            <!-- 加上container-fluid页面不超出 -->
             <div class="container-fluid">
                 <div class="row justify-content-center mb-5 pb-5">
                     <div class="col-md-7 text-center heading-section ftco-animate">
@@ -252,14 +252,14 @@
                 </div>
                 </div>
                 <section class="ftco-section ftco-counter img"style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">	
-                    <!-- 设置空的target阻止默认�??交表�?�以�?�刷新 -->
+                    <!-- 设置空的target阻止默认提交表单以后刷新 -->
                     <form class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
                         <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
                             <div class="pricing-table">
                                 <h3>Principaux produits</h3>
                                 <HR>
                                 <div class="form-group">
-                                    <!-- 这里设置的value值是php Post到的值，�?设置默认显示on -->
+                                    <!-- 这里设置的value值是php Post到的值，不设置默认显示on -->
                                     <input type="radio" id="radio1" name="radio" value="Caisse et logiciel" checked>
                                     <label class="circle" for="radio1" > Caisse et logiciel</label>
                                     <HR>
@@ -278,7 +278,7 @@
                                 <h3>Autres produits</h3>
                                 <HR>
                                 <div class="form-group">
-                                    <!-- php name�?��?�必须加[] -->
+                                    <!-- php name后面必须加[] -->
                                     <input name="checkbox[]" value="Smartphone" type="checkbox" id="checkbox1">
                                     <label class="circle" for="checkbox1"> Smartphone</label>
                                     <HR>
@@ -360,7 +360,7 @@
         </section>
         <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>  
         <script>
-            //点�?��?按钮�?��?消�?�
+            //点发送按钮发送消息
             $("#obtenirDevis").click(function (){
                 alert("Soumis avec succès!");
             });
@@ -451,7 +451,7 @@
             </svg>
         </div>
 
-        <!--客�?悬浮窗-->
+        <!--客服悬浮窗-->
         <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
             <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
                 <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
@@ -462,9 +462,9 @@
                 <div class="circle c-3"></div>
             </div>
         </div>
-        <!--客�?悬浮窗结�?�-->
+        <!--客服悬浮窗结束-->
 
-        <!--客�?悬浮窗JS-->
+        <!--客服悬浮窗JS-->
         <script type="text/javascript">
             (function ($) {
                 setInterval(function () {
@@ -491,10 +491,10 @@
                 });
             })(jQuery);
         </script>
-        <!--客�?悬浮窗JS结�?�-->
+        <!--客服悬浮窗JS结束-->
 
 
-        <!--产�?图弹窗介�?-->
+        <!--产品图弹窗介绍-->
         <div class="modal fade" id="product1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" style="display:none">
             <!-- 在style文件中设置lg max-height：1200px-->
             <div class="modal-dialog modal-lg">
@@ -502,7 +502,7 @@
                     <div class="modal-header">
                         <h4 class="modal-title" id="modalLabel">Caisse</h4></div>
                          <div id="_modalDialog_body" class="modal-body">
-                        <!--  设置这个div的大�?，超出部分显示滚动�?� -->
+                        <!--  设置这个div的大小，超出部分显示滚动条 -->
                             <div class="row">
                                 <div class="col-md-8">
                                     <img class="img_product" src="images/work-1.jpg" alt="work1">
@@ -528,7 +528,7 @@
                         <h4 class="modal-title" id="modalLabel">Caisse</h4>
                     </div>
                     <div id="_modalDialog_body" class="modal-body">
-                        <!--  设置这个div的大�?，超出部分显示滚动�?� -->
+                        <!--  设置这个div的大小，超出部分显示滚动条 -->
                         <div class="row">
                             <div class="col-md-8">
                                 <img class="img_product" src="images/work-2.jpg" alt="work2">
@@ -553,7 +553,7 @@
                     <div class="modal-header">
                         <h4 class="modal-title" id="modalLabel">Caisse</h4></div>
                     <div id="_modalDialog_body" class="modal-body">
-                        <!--  设置这个div的大�?，超出部分显示滚动�?� -->
+                        <!--  设置这个div的大小，超出部分显示滚动条 -->
                                 <div class="row">
                             <div class="col-md-8">
                                 <img class="img_product" src="images/work-3.jpg" alt="work3">
@@ -572,9 +572,9 @@
                 </div>
             </div>
         </div>
-        <!--产�?图弹窗部分结�?�-->
+        <!--产品图弹窗部分结束-->
 
-        <!-- 客�?自动回�?�?�天框 -->
+        <!-- 客服自动回复聊天框 -->
         <div class="chatContainer" style="z-index: 100;">
             <div class="chat-message-num"></div>
             <div class="chatBox" ref="chatBox" style="display: none">
@@ -582,7 +582,7 @@
                     <div class="chatBox-head-two">
                         <div class="chat-people">
                             <div class="ChatInfoHead">
-                                <img src="static/icon01.png" alt="头�?"/>
+                                <img src="static/icon01.png" alt="头像"/>
                             </div>
                         </div>
                         <div class="chat-close"><span style="font-weight: bolder;">&times;</span></div>
@@ -598,7 +598,7 @@
                                         <small class="chat-date" id="systime">2020-9-4 15:33:33</small>
                                     </div>
                                     <div class="left">
-                                        <div class="chat-avatars"><img src="static/icon01.png" alt="头�?"/></div>
+                                        <div class="chat-avatars"><img src="static/icon01.png" alt="头像"/></div>
                                         <div class="chat-message">
                                             Bonjour, je peut vous aider?
                                         </div>
@@ -615,7 +615,7 @@
                                 <button id="chat-biaoqing" class="btn-default-styles">
                                     <i class="iconfont icon-biaoqing"></i>
                                 </button>
-                                <label id="chat-tuxiang" title="�?��?图片" for="inputImage" class="btn-default-styles">
+                                <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
                                     <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
                                         name="file" id="inputImage" class="hidden">
                                     <i class="iconfont icon-tuxiang"></i>
@@ -661,8 +661,8 @@
                 </div>
             </div>
         </div>
-        <!-- 客�?自动回�?�?�天框部分结�?� -->
-                <!--客�?人工回�?-->
+        <!-- 客服自动回复聊天框部分结束 -->
+                <!--客服人工回复-->
         <!-- <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> -->
         <script>
             $(function () {
@@ -676,13 +676,13 @@
                         console.log("Connected to WebSocket server.");
                         $('.chatBox-content-demo').append(reply('Bonjour, avez-vous des questions ?'));
                     }
-                    //收到消�?�
+                    //收到消息
                     websocket.onmessage = function (event) {
-                        var msg = JSON.parse(event.data); //解�?收到的json消�?�数�?�
+                        var msg = JSON.parse(event.data); //解析收到的json消息数据
                         console.log(msg);
-                        var type = msg.type; // 消�?�类型
-                        var umsg = msg.message; //消�?�文本
-                        var uname = msg.name; //�?��?人
+                        var type = msg.type; // 消息类型
+                        var umsg = msg.message; //消息文本
+                        var uname = msg.name; //发送人
                         i++;
                         if (type == 'usermsg') {
                             $('.chatBox-content-demo').append(reply(umsg));
@@ -694,7 +694,7 @@
                         window.location.hash = '#' + i;
                     }
 
-                    //�?�生错误
+                    //发生错误
                     websocket.onerror = function (event) {
                         i++;
                         console.log("Connected to WebSocket server error");
@@ -727,13 +727,13 @@
                         }
                     }
 
-                    //按下enter键�?��?消�?�
+                    //按下enter键发送消息
                     $(window).keydown(function (event) {
                         if (event.keyCode == 13) {
                             var textContent = $("#message").val();
                             send();
                             if (textContent != "") {
-                                //�?�天框默认最底部
+                                //聊天框默认最底部
                                 $(document).ready(function () {
                                     $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
                                 });
@@ -759,12 +759,12 @@
                         }
                     });
 
-                    //点�?��?按钮�?��?消�?�
+                    //点发送按钮发送消息
                     $("#chat-fasong").click(function (){
                         var textContent = $("#message").val();
                         send();
                         if (textContent != "") {
-                            //�?�天框默认最底部
+                            //聊天框默认最底部
                             $(document).ready(function () {
                                 $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
                             });
@@ -789,13 +789,13 @@
                         }
                      });
                 } else {
-                    alert('该�?览器�?支�?web socket');
+                    alert('该浏览器不支持web socket');
                 }
             });
         </script>   
-        <!--客�?人工回�?部分结�?�-->
+        <!--客服人工回复部分结束-->
 
-        <!--客�?自动回�?对�?框JS部分-->
+        <!--客服自动回复对话框JS部分-->
         <script>
             function timenow() {
                 var myDate = new Date();
@@ -806,11 +806,11 @@
             document.getElementById('systime').innerHTML = timenow();
             screenFuc();
             function screenFuc() {
-                var topHeight = $(".chatBox-head").innerHeight();//�?�天头部高度
-                //�?幕�?于768px时候,布局change
+                var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度
+                //屏幕小于768px时候,布局change
                 var winWidth = $(window).innerWidth();
                 if (winWidth <= 768) {
-                    var totalHeight = $(window).height(); //页�?�整体高度
+                    var totalHeight = $(window).height(); //页面整体高度
                     //中间内容高度
                     $(".chatBox-info").css("height", totalHeight - topHeight);
                     $(".chatBox-content-demo").css("height", totalHeight - topHeight-55);
@@ -823,14 +823,14 @@
                     $(".chatBox-content-demo").css("height", 448);
                     $(".chatBox-list").css("height", 495);
                     $(".chatBox-kuang").css("height", 495);
-                    // !import�?�?�覆盖，以删除
+                    // !import不可覆盖，以删除
                     $(".div-textarea").css("width", 245);
                 }
             }
             (window.onresize = function () {
                 screenFuc();
             })();
-            //未读信�?�数�?为空时
+            //未读信息数量为空时
             var totalNum = $(".chat-message-num").html();
             if (totalNum == "") {
                 $(".chat-message-num").css("padding", 0);
@@ -857,7 +857,7 @@
                     $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
                             "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
                             "<div class=\"right\"> <div class=\"chat-message\"> " + ques + " </div> " +
-                            "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头�?\" /></div> </div> </div>");
+                            "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>");
                 }
                 $(document).ready(function () {
                     $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
@@ -868,25 +868,25 @@
             function replyNum(num) {
                 if (num == 1) {
                     repeatClientMsg("balabala1");
-                    var re = "1.我们是冠军�?";
+                    var re = "1.我们是冠军！";
                     reply(re);
                 } else if (num == 2) {
                     repeatClientMsg("balabala2");
-                    var re = "2.我们是冠军�?我们是冠军�?";
+                    var re = "2.我们是冠军！我们是冠军！";
                     reply(re);
                 } else if (num == 3) {
                     repeatClientMsg("balabala3");
-                    var re = "3.我们是冠军�?我们是冠军�?我们是冠军�?";
+                    var re = "3.我们是冠军！我们是冠军！我们是冠军！";
                     reply(re);
                 } else if (num == 4) {
                     repeatClientMsg("balabala4");
-                    var re = "4.我们是冠军�?我们是冠军�?我们是冠军�?我们是冠军�?";
+                    var re = "4.我们是冠军！我们是冠军！我们是冠军！我们是冠军！";
                     reply(re);
                 }
             }
 
 
-            //      �?��?表情
+            //      发送表情
             $("#chat-biaoqing").click(function () {
                 $(".biaoqing-photo").toggle();
             });
@@ -904,31 +904,31 @@
                     $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
                             "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
                             "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
-                            "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头�?\" /></div> </div> </div>");
-                    //�?��?�?�关闭表情框
+                            "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>");
+                    //发送后关闭表情框
                     $(".biaoqing-photo").toggle();
-                    //�?�天框默认最底部
+                    //聊天框默认最底部
                     $(document).ready(function () {
                         $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
                     });
                     document.getElementById('timenow').innerHTML = timenow();
                 })
             });
-            //自动回�?
+            //自动回复
             function reply(textContent) {
                 if (textContent != "") {
                     $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
                             "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
-                            "<div class=\"left\"><div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头�?\" /></div>  " +
+                            "<div class=\"left\"><div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div>  " +
                             "<div class=\"chat-message\"> " + textContent + " </div> </div> </div>");
-                    //�?�天框默认最底部
+                    //聊天框默认最底部
                     $(document).ready(function () {
                         $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
                     });
                     document.getElementById('timenow').innerHTML = timenow();
                 }
             }
-            //      �?��?图片
+            //      发送图片
             function selectImg(pic) {
                 if (!pic.files || !pic.files[0]) {
                     return;
@@ -939,8 +939,8 @@
                     $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
                             "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
                             "<div class=\"right\"> <div class=\"chat-message\"><img src=" + images + "></div> " +
-                            "<div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头�?\" /></div> </div> </div>");
-                    //�?�天框默认最底部
+                            "<div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+                    //聊天框默认最底部
                     $(document).ready(function () {
                         $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
                     });
@@ -953,7 +953,7 @@
 
 
         </script>
-        <!--客�?自动回�?对�?框JS部分结�?�-->
+        <!--客服自动回复对话框JS部分结束-->
 
 
         <script src="js/jquery.min.js"></script>
