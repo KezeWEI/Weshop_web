@@ -1,3 +1,10 @@
+<?php
+$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
+$externalContent = file_get_contents('http://checkip.dyndns.com/');
+preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+$ip_extern = $m[1]//赋值客户端外网IP
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,21 +81,26 @@
                 <div class="show-area"></div>
                 <div class="write-area">
                     <div><button class="btn btn-default send" >发送</button></div>
-                    <div><input name="name" id="name" type="text" placeholder="input your name"></div>
+                    <div><input name="ip" id="name" type="text" placeholder="input your name"></div>
                     <div>
                         <textarea name="message" id="message" cols="38" rows="4" placeholder="input your message..."></textarea>
                     </div>                    
                 </div>
             </div>
         </div>
-
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+        <script type="text/javascript">
+//            console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+            var ip_weshop = returnCitySN["cip"];//weshop外网IP
+        </script>
         <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script>
             $(function () {
-                var wsurl = 'ws://127.0.0.1:9505/websocket/server.php';
+                var wsurl = 'ws://192.168.1.100:8000';
                 var websocket;
                 var i = 0;
+                var ip;
                 if (window.WebSocket) {
                     websocket = new WebSocket(wsurl);
 
@@ -100,16 +112,19 @@
                     //收到消息
                     websocket.onmessage = function (event) {
                         var msg = JSON.parse(event.data); //解析收到的json消息数据
-
+                        console.log('msg received by weshop from client : ' + JSON.stringify(msg));
                         var type = msg.type; // 消息类型
                         var umsg = msg.message; //消息文本
-                        var uname = msg.name; //发送人
+                        ip = msg.name; //发送人
                         i++;
-                        if (type == 'usermsg') {
-                            $('.show-area').append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary">' + uname + ' say: </span>' + umsg + '</p>');
+                        if (type == 'clientmsg') {
+                            $('.show-area').append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary">' + ip + ' say: </span>' + umsg + '</p>');
                         }
                         if (type == 'system') {
                             $('.show-area').append('<p class="bg-warning message"><a name="' + i + '"></a><i class="glyphicon glyphicon-info-sign"></i>' + umsg + '</p>');
+                        }
+                        if (type == 'weshop') {
+                            $('.show-area').append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary">' + ip + ' say: </span>' + umsg + '</p>');
                         }
 
                         $('#message').val('');
@@ -133,21 +148,19 @@
                     }
 
                     function send() {
-                        var name = $('#name').val();
                         var message = $('#message').val();
-                        if (!name) {
-                            alert('请输入用户名!');
-                            return false;
-                        }
                         if (!message) {
                             alert('发送消息不能为空!');
                             return false;
                         }
                         var msg = {
+                            type: 'weshop',
                             message: message,
-                            name: name
+                            //name: ip
+                            name: "<?php echo $ip_local; ?>"
                         };
                         try {
+                            console.log('msg send by weshop to client : ' + JSON.stringify(msg));
                             websocket.send(JSON.stringify(msg));
                         } catch (ex) {
                             console.log(ex);
@@ -157,7 +170,6 @@
                     //按下enter键发送消息
                     $(window).keydown(function (event) {
                         if (event.keyCode == 13) {
-                            console.log('user enter');
                             send();
                         }
                     });
