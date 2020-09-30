@@ -1,6 +1,6 @@
 <?php
     require 'conn.php';
-
+    
     $data = $_POST;
     $mainProduct = $data['radio'];
     //autreproduit
@@ -10,16 +10,14 @@
     }
     $company = $data['company']; 
     $email = $data['email'];
-
     $telephone = $data['telephone'];
     $postcode = $data['postcode'];
     $address = $data['address'];
     $messages = $data['message'];
+    $date = date('Y-m-d');
 
-    echo "电话：".$telephone;
-
-    $sql = "INSERT INTO Devis (prinProduits, autreProduits, societe, email, telephone, codePostale, addresse, messages, statut) 
-    VALUES ('$mainProduct', '$otherproduct', '$company', '$email','$telephone','$postcode','$address','$messages',0);";
+    $sql = "INSERT INTO Devis (prinProduits, autreProduits, societe, email, telephone, codePostale, addresse, messages, statut,reg_date) 
+    VALUES ('$mainProduct', '$otherproduct', '$company', '$email','$telephone','$postcode','$address','$messages',0,'$date');";
     
     if ($conn->query($sql) === TRUE) {
         echo "新记录插入成功";
