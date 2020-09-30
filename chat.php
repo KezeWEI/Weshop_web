@@ -1,0 +1,189 @@
+<?php
+$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
+$externalContent = file_get_contents('http://checkip.dyndns.com/');
+preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+$ip_extern = $m[1]//赋值客户端外网IP
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>chatdemo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            <!--
+            html, body {
+                min-height: 100%; }
+
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Microsoft Yahei",sans-serif, Arial; }
+
+            .container {
+                text-align: center; }
+
+            .title {
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.3);
+                position: fixed;
+                line-height: 30px;
+                height: 30px;
+                left: 0px;
+                right: 0px;
+                background-color: white; }
+
+            .content {
+                background-color: #f1f1f1;
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+                margin-top: 30px; }
+            .content .show-area {
+                text-align: left;
+                padding-top: 8px;
+                padding-bottom: 168px; }
+            .content .show-area .message {
+                width: 70%;
+                padding: 5px;
+                word-wrap: break-word;
+                word-break: normal; }
+            .content .write-area {
+                position: fixed;
+                bottom: 0px;
+                right: 0px;
+                left: 0px;
+                background-color: #f1f1f1;
+                z-index: 10;
+                width: 100%;
+                height: 160px;
+                border-top: 1px solid #d8d8d8; }
+            .content .write-area .send {
+                position: relative;
+                top: -28px;
+                height: 28px;
+                border-top-left-radius: 55px;
+                border-top-right-radius: 55px; }
+            .content .write-area #name{
+                position: relative;
+                top: -20px;
+                line-height: 28px;
+                font-size: 13px; }
+            -->
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">简易聊天demo</div>
+            <div class="content">
+                <div class="show-area"></div>
+                <div class="write-area">
+                    <div><button class="btn btn-default send" >发送</button></div>
+                    <div><input name="ip" id="name" type="text" placeholder="input your name"></div>
+                    <div>
+                        <textarea name="message" id="message" cols="38" rows="4" placeholder="input your message..."></textarea>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+        <script type="text/javascript">
+//            console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+            var ip_weshop = returnCitySN["cip"];//weshop外网IP
+        </script>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script>
+            $(function () {
+                var wsurl = 'ws://192.168.1.100:8000';
+                var websocket;
+                var i = 0;
+                var ip;
+                if (window.WebSocket) {
+                    websocket = new WebSocket(wsurl);
+
+                    //连接建立
+                    websocket.onopen = function (evevt) {
+                        console.log("Connected to WebSocket server.");
+                        $('.show-area').append('<p class="bg-info message"><i class="glyphicon glyphicon-info-sign"></i>Connected to WebSocket server!</p>');
+                    }
+                    //收到消息
+                    websocket.onmessage = function (event) {
+                        var msg = JSON.parse(event.data); //解析收到的json消息数据
+                        console.log('msg received by weshop from client : ' + JSON.stringify(msg));
+                        var type = msg.type; // 消息类型
+                        var umsg = msg.message; //消息文本
+                        ip = msg.name; //发送人
+                        i++;
+                        if (type == 'clientmsg') {
+                            $('.show-area').append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary">' + ip + ' say: </span>' + umsg + '</p>');
+                        }
+                        if (type == 'system') {
+                            $('.show-area').append('<p class="bg-warning message"><a name="' + i + '"></a><i class="glyphicon glyphicon-info-sign"></i>' + umsg + '</p>');
+                        }
+                        if (type == 'weshop') {
+                            $('.show-area').append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary">' + ip + ' say: </span>' + umsg + '</p>');
+                        }
+
+                        $('#message').val('');
+                        window.location.hash = '#' + i;
+                    }
+
+                    //发生错误
+                    websocket.onerror = function (event) {
+                        i++;
+                        console.log("Connected to WebSocket server error");
+                        $('.show-area').append('<p class="bg-danger message"><a name="' + i + '"></a><i class="glyphicon glyphicon-info-sign"></i>Connect to WebSocket server error.</p>');
+                        window.location.hash = '#' + i;
+                    }
+
+                    //连接关闭
+                    websocket.onclose = function (event) {
+                        i++;
+                        console.log('websocket Connection Closed. ');
+                        $('.show-area').append('<p class="bg-warning message"><a name="' + i + '"></a><i class="glyphicon glyphicon-info-sign"></i>websocket Connection Closed.</p>');
+                        window.location.hash = '#' + i;
+                    }
+
+                    function send() {
+                        var message = $('#message').val();
+                        var ip = $('#name').val();
+                        var msg = {
+                            type: 'weshop',
+                            name: ip,
+                            message: message
+                        }
+                        if (!message) {
+                            alert('发送消息不能为空!');
+                            return false;
+                        } else {
+                            websocket.send(JSON.stringify(msg));
+                            $(".show-area").append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary"><?php echo $ip_local;?>say: </span>' + message + '</p>');
+                            document.getElementById('message').value = "";
+                            document.getElementById('name').value = "";
+                                    console.log('msg send by weshop to client : ' + JSON.stringify(msg));
+                        }
+                    }
+
+                    //按下enter键发送消息
+                    $(window).keydown(function (event) {
+                        if (event.keyCode == 13) {
+                            send();
+                        }
+                    });
+
+                    //点发送按钮发送消息
+                    $('.send').bind('click', function () {
+                        send();
+                    });
+
+                } else {
+                    alert('该浏览器不支持web socket');
+                }
+
+            });
+        </script>        
+    </body>
+</html>
