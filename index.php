@@ -701,7 +701,6 @@
                     console.log('received msg :　' + JSON.stringify(msg));
                     var type = msg.type; // 消息类型
                     var re = msg.message; //消息文本
-                    var ip = msg.name; //发送人
                     i++;
                     if (type == 'weshop') {
                         $('.chatBox-content-demo').append(reply(re));

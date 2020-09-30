@@ -1,13 +1,13 @@
-<?php
-//测试用，局域网IP和外网IP
-$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
-$externalContent = file_get_contents('http://checkip.dyndns.com/');
-preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-$ip_extern = $m[1]//赋值客户端外网IP
-?>
+//测试用，用于获取局域网IP和外网IP
+//<?php
+//$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
+//$externalContent = file_get_contents('http://checkip.dyndns.com/');
+//preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+//$ip_extern = $m[1]//赋值客户端外网IP
+//?>
 
 <?php
-
+//本地测试时使用局域网IP，加载到外网服务器之前切记修改为外网IP
 $host = '192.168.1.100';
 $port = '8000';
 $null = NULL;
@@ -44,9 +44,9 @@ while (true) {
         //获取client ip 编码json数据,并发送通知
         socket_getpeername($socket_new, $ip);
         $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
-        send_msg($response, '192.168.1.100');
+        send_msg($response, $host);
 
-        if ($ip == '192.168.1.100') {
+        if ($ip == $host) {
             global $weshop;
             $weshop = $socket_new;
         }
@@ -71,11 +71,11 @@ while (true) {
             //把消息发送给对应的人
             if ($msg_type == 'clientmsg') {//如果是客户消息则定向发送给weshop
                 $msg_to_weshop = mask(json_encode(array('type' => 'clientmsg', 'name' => $ip, 'message' => '来自' . $ip . '的客户消息 ： ' . $user_message)));
-                socket_sendto($weshop, $msg_to_weshop, strlen($msg_to_weshop), 0, '192.168.1.100', 8000);
-                send_msg($testmsg, '192.168.1.100');
+                socket_sendto($weshop, $msg_to_weshop, strlen($msg_to_weshop), 0, $host, $port);
+                send_msg($testmsg, $host);
             } else if ($msg_type == 'system') {
                 $testmsg2 = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => '来自' . $ip . '的系统消息')));
-                socket_sendto($weshop, $testmsg2, strlen($testmsg2), 0, '192.168.1.100', 8000);
+                socket_sendto($weshop, $testmsg2, strlen($testmsg2), 0, $host, $port);
             } else if ($msg_type == 'weshop') {
                 $msg_to_client = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => $user_message)));
                 send_msg($msg_to_client, $user_ip);
@@ -90,7 +90,7 @@ while (true) {
             socket_getpeername($changed_socket, $ip);
             unset($clients[$found_socket]);
             $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' disconnected')));
-            send_msg($response, '192.168.1.100');
+            send_msg($response, $host);
         }
     }
 }
@@ -103,7 +103,7 @@ function send_msg($msg, $ip) {
     foreach ($clients as $search_client) {
         socket_getpeername($search_client, $ip_client);
         if ($ip == $ip_client) {
-            socket_sendto($search_client, $msg, strlen($msg), 0, $ip, 8000);
+            socket_sendto($search_client, $msg, strlen($msg), 0, $ip, $port);
         }
     }
 }
