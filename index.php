@@ -5,6 +5,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- icon -->
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
@@ -204,10 +206,11 @@
                 <div class="row">
                     <div class="col-md-4 ftco-animate">
                         <div class="work-entry">
-                            <a data-toggle="modal" data-target="#product1" class="img" style="background-image: url(images/work1.png);">
+                        <!-- js修改方式obj.style.backgroundImage = "url(img/yygk1.png)"; -->
+                            <a id="product1_img" data-toggle="modal" data-target="#product1" class="img" style="background-image: url(images/work1.png);">
                                 <div class="text d-flex justify-content-center align-items-center">
                                     <div class="p-3">
-                                        <h3>Tablette</h3>
+                                        <h3 id="product1_title">Tablette</h3>
                                     </div>
                                 </div>
                             </a>
@@ -215,10 +218,10 @@
                     </div>
                     <div class="col-md-4 ftco-animate">
                         <div class="work-entry">
-                            <a data-toggle="modal" data-target="#product2" class="img" style="background-image: url(images/work2.png);">
+                            <a id="product2_img" data-toggle="modal" data-target="#product2" class="img" style="background-image: url(images/work2.png);">
                                 <div class="text d-flex justify-content-center align-items-center">
                                     <div class="p-3">
-                                        <h3>Caisse traditionnelle</h3>
+                                        <h3 id="product2_title">Caisse traditionnelle</h3>
                                     </div>
                                 </div>
                             </a>
@@ -226,10 +229,10 @@
                     </div>
                     <div class="col-md-4 ftco-animate">
                         <div class="work-entry">
-                            <a data-toggle="modal" data-target="#product3" class="img" style="background-image: url(images/work3.png);">
+                            <a id="product3_img" data-toggle="modal" data-target="#product3" class="img" style="background-image: url(images/work3.png);">
                                 <div class="text d-flex justify-content-center align-items-center">
                                     <div class="p-3">
-                                        <h3>Télécommande portable</h3>
+                                        <h3 id="product3_title">Télécommande portable</h3>
                                     </div>
                                 </div>
                             </a>
@@ -252,117 +255,221 @@
                 </div>
                 </div>
                 <section class="ftco-section ftco-counter img"style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">	
+                    <div id="beforeSubmit" >
                     <!-- 设置空的target阻止默认提交表单以后刷新 -->
-                    <form class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
-                        <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                            <div class="pricing-table">
-                                <h3>Principaux produits</h3>
-                                <HR>
-                                <div class="form-group">
-                                    <!-- 这里设置的value值是php Post到的值，不设置默认显示on -->
-                                    <input type="radio" id="radio1" name="radio" value="Caisse et logiciel" checked>
-                                    <label class="circle" for="radio1" > Caisse et logiciel</label>
+                        <form class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
+                            <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                <div class="pricing-table">
+                                    <h3>Principaux produits</h3>
                                     <HR>
-                                    <input type="radio" id="radio2" name="radio" value="Tablette et logiciel">
-                                    <label class="circle" for="radio2"> Tablette et logiciel</label>
-                                    <HR>
-                                    <input type="radio" id="radio3" name="radio" value="Logiciel">
-                                    <label class="circle" for="radio3"> Logiciel</label>
-                                    <HR>
+                                    <div class="form-group">
+                                        <!-- 这里设置的value值是php Post到的值，不设置默认显示on -->
+                                        <input type="radio" id="radio1" name="radio" value="Caisse et logiciel" checked>
+                                        <label class="circle" for="radio1" > Caisse et logiciel</label>
+                                        <HR>
+                                        <input type="radio" id="radio2" name="radio" value="Tablette et logiciel">
+                                        <label class="circle" for="radio2"> Tablette et logiciel</label>
+                                        <HR>
+                                        <input type="radio" id="radio3" name="radio" value="Logiciel">
+                                        <label class="circle" for="radio3"> Logiciel</label>
+                                        <HR>
+                                    </div>
                                 </div>
-                            </div>
-                            </br>
-                        </div>					
-                        <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12" >
-                            <div class="pricing-table">
-                                <h3>Autres produits</h3>
-                                <HR>
-                                <div class="form-group">
-                                    <!-- php name后面必须加[] -->
-                                    <input name="checkbox[]" value="Smartphone" type="checkbox" id="checkbox1">
-                                    <label class="circle" for="checkbox1"> Smartphone</label>
+                                </br>
+                            </div>					
+                            <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12" >
+                                <div class="pricing-table">
+                                    <h3>Autres produits</h3>
                                     <HR>
-                                    <input name="checkbox[]" value="Imprimante" type="checkbox" id="checkbox2">
-                                    <label class="circle" for="checkbox2"> Imprimante</label>
-                                    <HR>
-                                    <input name="checkbox[]" value="Tiroir" type="checkbox" id="checkbox3">
-                                    <label class="circle" for="checkbox3"> Tiroir</label>
-                                    <HR>
-                                    <input name="checkbox[]" value="Balance" type="checkbox" id="checkbox4">
-                                    <label class="circle" for="checkbox4"> Balance</label>
-                                    <HR>
-                                    <input name="checkbox[]" value="Scanneur" type="checkbox" id="checkbox5">
-                                    <label class="circle" for="checkbox5"> Scanneur</label>
-                                    <HR>
-                                    <input name="checkbox[]" value="Ecran de client" type="checkbox" id="checkbox6">
-                                    <label class="circle" for="checkbox6"> Ecran de client</label>
-                                    <HR>
-                                    <input name="checkbox[]" value="Conseillez-moi" type="checkbox" id="checkbox7">
-                                    <label class="circle" for="checkbox7"> Conseillez-moi</label>
+                                    <div class="form-group">
+                                        <!-- php name后面必须加[] -->
+                                        <input name="checkbox[]" value="Smartphone" type="checkbox" id="checkbox1">
+                                        <label class="circle" for="checkbox1"> Smartphone</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Imprimante" type="checkbox" id="checkbox2">
+                                        <label class="circle" for="checkbox2"> Imprimante</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Tiroir" type="checkbox" id="checkbox3">
+                                        <label class="circle" for="checkbox3"> Tiroir</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Balance" type="checkbox" id="checkbox4">
+                                        <label class="circle" for="checkbox4"> Balance</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Scanneur" type="checkbox" id="checkbox5">
+                                        <label class="circle" for="checkbox5"> Scanneur</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Ecran de client" type="checkbox" id="checkbox6">
+                                        <label class="circle" for="checkbox6"> Ecran de client</label>
+                                        <HR>
+                                        <input name="checkbox[]" value="Conseillez-moi" type="checkbox" id="checkbox7">
+                                        <label class="circle" for="checkbox7"> Conseillez-moi</label>
+                                    </div>
                                 </div>
+                                </br>
                             </div>
-                            </br>
-                        </div>
-                        <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12" >
-                            <div class="pricing-table" >
-                                <h3>Votre Informations</h3>
-                                <HR>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="societe" class="form-control" id="societe" placeholder="Nom de la société *" required="required">
+                            <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12" >
+                                <div class="pricing-table" >
+                                    <h3>Votre Informations</h3>
+                                    <HR>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="company" class="form-control" id="company" placeholder="Nom de la société *" required="required">
+                                            </div>
                                         </div>
-                                    </div>
-                                    </br>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <input type="email" name="email" class="form-control" id="email" placeholder="Mail *" required="required">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="telephone" class="form-control" id="telephone" placeholder="Tel *" required="required">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="codePostale" class="form-control" id="codePostale" placeholder="Code postale" required="required">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="addresse" class="form-control" id="addresse" placeholder="Addresse" required="required">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="row">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10">
-                                            <textarea rows="3" name="message" class="form-control" id="description" placeholder="Votre message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="actions">
                                         </br>
-                                        <input type="submit" id="obtenirDevis" value="OBTENIR LE DEVIS" name="submit" id="submitButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Mail *" required="required">
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="telephone" class="form-control" id="telephone" placeholder="Tel *" required="required">
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="postcode" class="form-control" id="postcode" placeholder="Code postale" required="required">
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="address" class="form-control" id="address" placeholder="Addresse" required="required">
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10">
+                                                <textarea rows="3" name="message" class="form-control" id="message" placeholder="Votre message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="actions">
+                                            </br>
+                                            <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="submit" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="afterSubmit" class="row container-fluid" style="display: none">
+                        <div class="colForm col-lg-1"></div>
+                        <div class="colForm col-lg-8" >
+                            <div class="pricing-table" style="height:400px;">
+                                <div style="text-align:center">
+                                    <h3>Vous avez soumis avec succès  <img src="images/check.png" style="width:50px; height:50px"></h3>
+                                    <span class="subheading">Nous vous contacterons dès que possible dans les trois jours ouvrables</span>
+                                    <HR>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-6">
+                                        <div>
+                                            <h5>Produit principal:</h5>
+                                            <span id="mainProduct">Produit principal</apan>
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div>
+                                            <h5>Autres produits:</h5>
+                                            <span id="otherProduct">Autres produits</apan>
+                                        </div>
                                     </div>
+                                    <div class="col-lg-5">
+                                        <h5>Vos informations: </h5>
+                                        <div style="display:inline">
+                                            <b style="">Société: </b>
+                                            <span id="companyPrint">Société</span>
+                                        </div>
+                                        <br>
+                                        <div style="display:inline">
+                                            <b>Mail: </b>
+                                            <span id="mailPrint">Mail</span>
+                                        </div>
+                                        <br>
+                                        <div style="display:inline">
+                                            <b>Téléphone: </b>
+                                            <span id="telephonePrint">Téléphone</span>
+                                        </div>
+                                        <br>
+                                        <div style="display:inline">
+                                            <b>Addresse: </b>
+                                            <span id="addressPrint">Addresse</span>
+                                        </div>
+                                        <br>
+                                        <div style="display:inline">
+                                            <b>Message: </b>
+                                            <span id="messagePrint">Message</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </section>	
             </div>
         </section>
         <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>  
         <script>
             //点发送按钮发送消息
-            $("#obtenirDevis").click(function (){
+            $("#getDevis").click(function (){
                 alert("Soumis avec succès!");
+                $("#beforeSubmit").hide();
+                $("#afterSubmit").show();
+                //取单选框的值
+                $("#mainProduct").html($("input[name='radio']:checked").val());
+                //取复选框的值
+                var stringOtherProduct = "";
+                var checkbox = document.getElementsByName('checkbox[]');
+                $("input[name='checkbox[]']:checked").each(function(i){
+                    if($(this).val()!="Conseillez-moi"){
+                        stringOtherProduct = stringOtherProduct+"  "+$(this).val();
+                    }
+                });
+                $("#otherProduct").html(stringOtherProduct);
+                $("#companyPrint").html($("#company").val());
+                $("#mailPrint").html($("#email").val());
+                $("#telephonePrint").html($("#telephone").val());
+                $("#addressPrint").html($("#address").val());
+                $("#messagePrint").html($("#message").val());
+            });
+
+
+            $(function(){ 
+                $.ajax({ url: 'changeData.php',type: 'post',data:{table:'productlist',sql: 'SELECT * FROM productList;'}}).done(function(msg){
+                    //php中json转js数组
+                    var data_obj = eval(msg);
+                    console.log(data_obj);
+                    for(var i=0;i<3;i++){
+                        var pruductNum = i+1; 
+                        $("#product"+pruductNum+"_title").text(data_obj[i].title);
+                        document.getElementById("product"+pruductNum+"_img").style.backgroundImage = "url('"+data_obj[i].imageUrl+"')";
+                        $("#product"+pruductNum+"Title").text(data_obj[i].title);
+                        $("#product"+pruductNum+"Description").text(data_obj[i].description);
+                        $("#product"+pruductNum+"Image").attr('src',data_obj[i].imageUrl);
+                    }
+                })
+                $.ajax({ url: 'changeData.php',type: 'post',data:{table:'wechatlist',sql: 'SELECT * FROM wechatList;'}}).done(function(msg){
+                    //php中json转js数组
+                    var data_obj = eval(msg);
+                    console.log(data_obj);
+                    for(var i=0;i<2;i++){
+                        var pruductNum = i+1; 
+                        $("#tweet"+pruductNum+"_title").text(data_obj[i].title);
+                        $("#tweet"+pruductNum+"_title").attr("href",data_obj[i].url);
+                        $("#tweet"+pruductNum+"_url").attr("href",data_obj[i].url);
+                        $("#tweet"+pruductNum+"_date").text(data_obj[i].reg_time);
+                        document.getElementById("tweet"+pruductNum+"_img").style.backgroundImage = "url('"+data_obj[i].imageUrl+"')";
+                    }
+                })
             });
         </script>
 
@@ -396,24 +503,24 @@
                         <div class="ftco-footer-widget mb-4">
                             <h2 class="ftco-heading-2">Recent Blog</h2>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                                <a id="tweet1_img" class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                                    <h3 class="heading"><a id="tweet1_title" href="#">Even the all-powerful Pointing has no control about</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                        <div><span class="icon-calendar"> </span><h7 id="tweet1_date"> Sept 15, 2018</h7></div>
+                                        <div><span class="icon-person"></span> Admin</div>
+                                        <div><span class="icon-chat"></span> 19</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                                <a id="tweet2_img" class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                                    <h3 class="heading"><a id="tweet2_title"  href="#">Even the all-powerful Pointing has no control about</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                        <div><span class="icon-calendar"> </span><h7 id="tweet2_date"> Sept 15, 2018</h7></div>
+                                        <div><span class="icon-person"></span> Admin</div>
+                                        <div><span class="icon-chat"></span> 19</div>
                                     </div>
                                 </div>
                             </div>
@@ -500,16 +607,16 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modalLabel">Caisse</h4></div>
+                        <h4 id="product1Title" class="modal-title" id="modalLabel">Caisse</h4></div>
                          <div id="_modalDialog_body" class="modal-body">
                         <!--  设置这个div的大小，超出部分显示滚动条 -->
                             <div class="row">
                                 <div class="col-md-8">
-                                    <img class="img_product" src="images/work-1.jpg" alt="work1">
+                                    <img id="product1Image" class="img_product" src="images/work-1.jpg" alt="work1">
                                 </div>
                                 <div class="col-md-4">
                                     <h2>Introduction:</h2>
-                                    <h4>balabalabalabala</h4>
+                                    <h4 id="product1Description">balabalabalabala</h4>
                                 </div>
                             </div>
                          </div>
@@ -525,17 +632,17 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modalLabel">Caisse</h4>
+                        <h4 id="product2Title" class="modal-title" id="modalLabel">Caisse</h4>
                     </div>
                     <div id="_modalDialog_body" class="modal-body">
                         <!--  设置这个div的大小，超出部分显示滚动条 -->
                         <div class="row">
                             <div class="col-md-8">
-                                <img class="img_product" src="images/work-2.jpg" alt="work2">
+                                <img id="product2Image" class="img_product" src="images/work-2.jpg" alt="work2">
                             </div>
                             <div class="col-md-4">
                                 <h2>Introduction:</h2>
-                                <h4>balabalabalabala</h4>
+                                <h4 id="product2Description">balabalabalabala</h4>
                             </div>
                         </div>
                     </div>
@@ -551,16 +658,16 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modalLabel">Caisse</h4></div>
+                        <h4 id="product3Title" class="modal-title" id="modalLabel">Caisse</h4></div>
                     <div id="_modalDialog_body" class="modal-body">
                         <!--  设置这个div的大小，超出部分显示滚动条 -->
                                 <div class="row">
                             <div class="col-md-8">
-                                <img class="img_product" src="images/work-3.jpg" alt="work3">
+                                <img id="product3Image" class="img_product" src="images/work-3.jpg" alt="work3">
                             </div>
                             <div class="col-md-4">
                                 <h2>Introduction:</h2>
-                                <h4>balabalabalabala</h4>
+                                <h4 id="product3Description">balabalabalabala</h4>
                             </div>
                         </div>
 
