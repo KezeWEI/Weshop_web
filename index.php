@@ -5,8 +5,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- icon -->
-        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
@@ -716,7 +714,7 @@
                     <div class="chatBox-send">
                         <!-- <div class="div-textarea"></div> -->
                         <div>
-                            <input class="div-textarea" id="message" style="border: 0px;">
+                            <input class="div-textarea" id="msg_client" style="border: 0px;">
                         </div>
                         <div>
                             <button id="chat-biaoqing" class="btn-default-styles">
@@ -813,7 +811,7 @@
                     if (type == 'weshop') {
                         $('.chatBox-content-demo').append(reply(re));
                     }
-                    $('#message').val('');
+                    $('#msg_client').val('');
                     window.location.hash = '#' + i;
                 }
 
@@ -834,7 +832,7 @@
                 }
 
                 function send() {
-                    var message = $('#message').val();
+                    var message = $('#msg_client').val();
                     if (!message) {
                         return false;
                     }
@@ -846,7 +844,7 @@
                     try {
                         websocket.send(JSON.stringify(msg));
                         repeatClientMsg(message);
-                        document.getElementById('message').value = "";
+                        document.getElementById('msg_client').value = "";
                         console.log('send msg : ' + JSON.stringify(msg));
                     } catch (ex) {
                         console.log(ex);
@@ -856,7 +854,7 @@
                 //按下enter键发送消息
                 $(window).keydown(function (event) {
                     if (event.keyCode == 13) {
-                        var textContent = $("#message").val();
+                        var textContent = $("#msg_client").val();
                         send();
                         if (online != '1') {
                             if (textContent != "") {
@@ -889,7 +887,7 @@
 
                 //点发送按钮发送消息
                 $("#chat-fasong").click(function () {
-                    var textContent = $("#message").val();
+                    var textContent = $("#msg_client").val();
                     send();
                     if (online != '1') {
                         if (textContent != "") {
