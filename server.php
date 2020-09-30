@@ -44,7 +44,7 @@ while (true) {
         //获取client ip 编码json数据,并发送通知
         socket_getpeername($socket_new, $ip);
         $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
-        send_message($response);
+        send_msg($response, '192.168.1.100');
 
         if ($ip == '192.168.1.100') {
             global $weshop;
@@ -77,9 +77,8 @@ while (true) {
                 $testmsg2 = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => '来自' . $ip . '的系统消息')));
                 socket_sendto($weshop, $testmsg2, strlen($testmsg2), 0, '192.168.1.100', 8000);
             } else if ($msg_type == 'weshop') {
-                $msg_to_fonc = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => '通过函数发送给' . $user_ip . '的消息 ： ' . $user_message)));
-                
-                send_msg($msg_to_fonc, $user_ip);
+                $msg_to_client = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => $user_message)));
+                send_msg($msg_to_client, $user_ip);
             }
             break 2;
         }
@@ -91,33 +90,20 @@ while (true) {
             socket_getpeername($changed_socket, $ip);
             unset($clients[$found_socket]);
             $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' disconnected')));
-            send_message($response);
+            send_msg($response, '192.168.1.100');
         }
     }
 }
 // 关闭监听的socket
 socket_close($sock);
 
-//发送消息的方法
-function send_message($msg) {
-    global $clients;
-    foreach ($clients as $changed_socket) {
-        @socket_write($changed_socket, $msg, strlen($msg));
-    }
-    return true;
-}
-
+//发送消息的方法，将形参$msg传输给$ip对应的socket
 function send_msg($msg, $ip) {
     global $clients;
-    
     foreach ($clients as $search_client) {
         socket_getpeername($search_client, $ip_client);
-        $test = mask(json_encode(array('type' => 'weshop', 'name' => $ip_client, 'message' => '遍历了' .$ip_client)));
-        socket_sendto($weshop, $test, strlen($test), 0, '192.168.1.100', 8000);
         if ($ip == $ip_client) {
             socket_sendto($search_client, $msg, strlen($msg), 0, $ip, 8000);
-            socket_sendto($weshop, $msg, strlen($msg), 0, '192.168.1.100', 8000);
-            
         }
     }
 }

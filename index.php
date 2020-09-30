@@ -670,7 +670,7 @@
     </script>
     <!--另一种通过php检测ip的方法-->
     <?php
-    $ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
+    $ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取服务端的局域网IP
     $externalContent = file_get_contents('http://checkip.dyndns.com/');
     preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
     $ip_extern = $m[1]//赋值客户端外网IP
@@ -732,9 +732,9 @@
                         return false;
                     }
                     var msg = {
-                        type: 'clientmsg',
-                        name: "<?php echo $ip_local; ?>",
-                        message: message,
+                        type: "clientmsg",
+                        name: ip_client,
+                        message: message
                     };
                     try {
                         websocket.send(JSON.stringify(msg));

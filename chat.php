@@ -149,21 +149,21 @@ $ip_extern = $m[1]//赋值客户端外网IP
 
                     function send() {
                         var message = $('#message').val();
+                        var ip = $('#name').val();
+                        var msg = {
+                            type: 'weshop',
+                            name: ip,
+                            message: message
+                        }
                         if (!message) {
                             alert('发送消息不能为空!');
                             return false;
-                        }
-                        var msg = {
-                            type: 'weshop',
-                            message: message,
-                            //name: ip
-                            name: "<?php echo $ip_local; ?>"
-                        };
-                        try {
-                            console.log('msg send by weshop to client : ' + JSON.stringify(msg));
+                        } else {
                             websocket.send(JSON.stringify(msg));
-                        } catch (ex) {
-                            console.log(ex);
+                            $(".show-area").append('<p class="bg-success message"><i class="glyphicon glyphicon-user"></i><a name="' + i + '"></a><span class="label label-primary"><?php echo $ip_local;?>say: </span>' + message + '</p>');
+                            document.getElementById('message').value = "";
+                            document.getElementById('name').value = "";
+                                    console.log('msg send by weshop to client : ' + JSON.stringify(msg));
                         }
                     }
 
