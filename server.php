@@ -1,5 +1,4 @@
 <?php
-
 //测试用，局域网IP和外网IP
 $ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
 $externalContent = file_get_contents('http://checkip.dyndns.com/');
@@ -32,11 +31,11 @@ while (true) {
     socket_select($changed, $null, $null, 0, 10);
 
     //如果有新的连接
-    if (in_array($socket, $changed)) {
+    if (in_array($socket, $changed)) {//changed数组里找到了为该socket的值
         //接受并加入新的socket连接
         $socket_new = socket_accept($socket);
         socket_getpeername($socket_new, $ip);
-        $clients[$ip] = $socket_new;
+        $clients[] = $socket_new;
 
         //通过socket获取数据执行handshake
         $header = socket_read($socket_new, 1024);
@@ -47,9 +46,6 @@ while (true) {
         $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
         send_message($response);
 
-        $testmsg1 = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => '111')));
-        $testmsg2 = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => '222')));
-        
         if ($ip == '192.168.1.100') {
             global $weshop;
             $weshop = $socket_new;
@@ -70,12 +66,21 @@ while (true) {
             $msg_type = $tst_msg->type;
             $user_ip = $tst_msg->name;
             $user_message = $tst_msg->message;
+            socket_getpeername($changed_socket, $ip);//当前socket的ip
 
             //把消息发送给对应的人
-            socket_getpeername($changed_socket, $ip);
-            $testmsg = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => $user_message. '这是一条测试消息')));
-            socket_sendto($weshop, $testmsg, strlen($testmsg), 0, '192.168.1.100', 8000);
-            
+            if ($msg_type == 'clientmsg') {//如果是客户消息则定向发送给weshop
+                $msg_to_weshop = mask(json_encode(array('type' => 'clientmsg', 'name' => $ip, 'message' => '来自' . $ip . '的客户消息 ： ' . $user_message)));
+                socket_sendto($weshop, $msg_to_weshop, strlen($msg_to_weshop), 0, '192.168.1.100', 8000);
+                send_msg($testmsg, '192.168.1.100');
+            } else if ($msg_type == 'system') {
+                $testmsg2 = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => '来自' . $ip . '的系统消息')));
+                socket_sendto($weshop, $testmsg2, strlen($testmsg2), 0, '192.168.1.100', 8000);
+            } else if ($msg_type == 'weshop') {
+                $msg_to_fonc = mask(json_encode(array('type' => 'weshop', 'name' => $ip, 'message' => '通过函数发送给' . $user_ip . '的消息 ： ' . $user_message)));
+                
+                send_msg($msg_to_fonc, $user_ip);
+            }
             break 2;
         }
 
@@ -100,6 +105,21 @@ function send_message($msg) {
         @socket_write($changed_socket, $msg, strlen($msg));
     }
     return true;
+}
+
+function send_msg($msg, $ip) {
+    global $clients;
+    
+    foreach ($clients as $search_client) {
+        socket_getpeername($search_client, $ip_client);
+        $test = mask(json_encode(array('type' => 'weshop', 'name' => $ip_client, 'message' => '遍历了' .$ip_client)));
+        socket_sendto($weshop, $test, strlen($test), 0, '192.168.1.100', 8000);
+        if ($ip == $ip_client) {
+            socket_sendto($search_client, $msg, strlen($msg), 0, $ip, 8000);
+            socket_sendto($weshop, $msg, strlen($msg), 0, '192.168.1.100', 8000);
+            
+        }
+    }
 }
 
 //解码数据
