@@ -354,7 +354,7 @@
                                         </div>
                                         <div class="actions">
                                             </br>
-                                            <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="submit" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
+                                            <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="getDevis" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
                                         </div>
                                 </div>
                             </div>
