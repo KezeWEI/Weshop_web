@@ -43,7 +43,7 @@ while (true) {
 
         //获取client ip 编码json数据,并发送通知
         socket_getpeername($socket_new, $ip);
-        $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
+        $response = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => $ip . ' connected')));
         send_msg($response, $host);
 
         if ($ip == $host) {
