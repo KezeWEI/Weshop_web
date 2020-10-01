@@ -89,7 +89,7 @@ while (true) {
             $found_socket = array_search($changed_socket, $clients);
             socket_getpeername($changed_socket, $ip);
             unset($clients[$found_socket]);
-            $response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' disconnected')));
+            $response = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => $ip . ' disconnected')));
             send_msg($response, $host);
         }
     }
