@@ -36,10 +36,10 @@
 
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="index.php" class="nav-link">Accueil</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link">Accueil</a></li>
                         <li class="nav-item"><a href="presentation.php" class="nav-link">Présentation</a></li>
                         <li class="nav-item"><a href="produits.php" class="nav-link">Produits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                         <li class="nav-item cta"><a href="#devis" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
