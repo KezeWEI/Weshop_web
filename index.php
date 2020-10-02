@@ -255,7 +255,7 @@
             <section class="ftco-section ftco-counter img"style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">	
                 <div id="beforeSubmit" >
                     <!-- 设置空的target阻止默认提交表单以后刷新 -->
-                    <form class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
+                    <form id="formDevis" class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
                         <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
                             <div class="pricing-table">
                                 <h3>Principaux produits</h3>
@@ -352,7 +352,7 @@
                                 </div>
                                 <div class="actions">
                                     </br>
-                                    <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="submit" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
+                                    <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="getDevis" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
                                 </div>
                             </div>
                         </div>
@@ -417,8 +417,8 @@
     </section>
     <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>  
     <script>
-        //点发送按钮发送消息
-        $("#getDevis").click(function () {
+        //提交表单后执行
+        $('#formDevis').submit(function() {
             alert("Soumis avec succès!");
             $("#beforeSubmit").hide();
             $("#afterSubmit").show();
