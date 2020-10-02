@@ -352,7 +352,7 @@
                                 </div>
                                 <div class="actions">
                                     </br>
-                                    <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="submit" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
+                                    <input type="submit" id="getDevis" value="OBTENIR LE DEVIS" name="getDevis" id="getButton" class="btn btn-primary px-4 py-2" title="Submit Your Message!" />
                                 </div>
                             </div>
                         </div>
@@ -419,25 +419,27 @@
     <script>
         //点发送按钮发送消息
         $("#getDevis").click(function () {
-            alert("Soumis avec succès!");
-            $("#beforeSubmit").hide();
-            $("#afterSubmit").show();
-            //取单选框的值
-            $("#mainProduct").html($("input[name='radio']:checked").val());
-            //取复选框的值
-            var stringOtherProduct = "";
-            var checkbox = document.getElementsByName('checkbox[]');
-            $("input[name='checkbox[]']:checked").each(function (i) {
-                if ($(this).val() != "Conseillez-moi") {
-                    stringOtherProduct = stringOtherProduct + "  " + $(this).val();
-                }
+            $('#getDevis').submit(function() {
+                alert("Soumis avec succès!");
+                $("#beforeSubmit").hide();
+                $("#afterSubmit").show();
+                //取单选框的值
+                $("#mainProduct").html($("input[name='radio']:checked").val());
+                //取复选框的值
+                var stringOtherProduct = "";
+                var checkbox = document.getElementsByName('checkbox[]');
+                $("input[name='checkbox[]']:checked").each(function (i) {
+                    if ($(this).val() != "Conseillez-moi") {
+                        stringOtherProduct = stringOtherProduct + "  " + $(this).val();
+                    }
+                });
+                $("#otherProduct").html(stringOtherProduct);
+                $("#companyPrint").html($("#company").val());
+                $("#mailPrint").html($("#email").val());
+                $("#telephonePrint").html($("#telephone").val());
+                $("#addressPrint").html($("#address").val());
+                $("#messagePrint").html($("#message").val());
             });
-            $("#otherProduct").html(stringOtherProduct);
-            $("#companyPrint").html($("#company").val());
-            $("#mailPrint").html($("#email").val());
-            $("#telephonePrint").html($("#telephone").val());
-            $("#addressPrint").html($("#address").val());
-            $("#messagePrint").html($("#message").val());
         });
 
 
