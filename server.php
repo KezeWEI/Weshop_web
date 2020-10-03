@@ -70,7 +70,7 @@ while (true) {
 
             //把消息发送给对应的人
             if ($msg_type == 'clientmsg') {//如果是客户消息则定向发送给weshop
-                $msg_to_weshop = mask(json_encode(array('type' => 'clientmsg', 'name' => $ip, 'message' => '来自' . $ip . '的客户消息 ： ' . $user_message)));
+                $msg_to_weshop = mask(json_encode(array('type' => 'clientmsg', 'name' => $ip, 'message' => $user_message)));
                 socket_sendto($weshop, $msg_to_weshop, strlen($msg_to_weshop), 0, $host, $port);
                 send_msg($testmsg, $host);
             } else if ($msg_type == 'system') {
