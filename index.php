@@ -419,7 +419,6 @@
     <script>
         //提交表单后执行
         $('#formDevis').submit(function() {
-            alert("Soumis avec succès!");
             $("#beforeSubmit").hide();
             $("#afterSubmit").show();
             //取单选框的值
