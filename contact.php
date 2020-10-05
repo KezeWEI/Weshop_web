@@ -45,7 +45,11 @@
                     <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                     <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                     <li class="nav-item active"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta"><a href="index.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+                    
+                    <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span>DEVIS</span></a></li>
+                    
+                    <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                    <li class="nav-item cta"><a href="contact_CH.html" class="nav-link">中文/FR</a></li>
                 </ul>
             </div>
 
@@ -72,38 +76,38 @@
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3">
-                    <p><span>Address:</span>8 avenue Henri Barbusse, 93000 Bobigny</p>
+                    <p><span>Adresse: </span>8 avenue Henri Barbusse, 93000 Bobigny</p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Phone:</span>+33 1 48 46 12 88</a></p>
+                    <p><span>Tél: </span>+33 1 48 46 12 88</a></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Email:</span>contact@weshop.fr</a></p>
+                    <p><span>Email: </span>contact@weshop.fr</a></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Website:</span> <a href="index.html">weshop.fr</a></p>
+                    <p><span>Site web: </span> <a href="index.html">weshop.fr</a></p>
                 </div>
             </div>
             <div class="row block-9">
                 <div class="col-md-6 pr-md-5">
-                    <form action="contact_sendMail.php" method="get">
+                    <form action="#">
                         <div class="form-group">
-                            <input name="societe" type="text" class="form-control" placeholder="Nom de la société *" required="required">
+                            <input type="text" class="form-control" placeholder="Nom de la société *" required="required">
                         </div>
                         <div class="form-group">
-                            <input name="email" type="text" class="form-control" placeholder="Mail *" required="required">
+                            <input type="text" class="form-control" placeholder="Mail *" required="required">
                         </div>
                         <div class="form-group">
-                            <input name="tel" type="text" class="form-control" placeholder="Tel *" required="required">
+                            <input type="text" class="form-control" placeholder="Tél *" required="required">
                         </div>
                         <div class="form-group">
-                            <input name="postale" type="text" class="form-control" placeholder="Code postale" required="required">
+                            <input type="text" class="form-control" placeholder="Code postal" required="required">
                         </div>
                         <div class="form-group">
-                            <input name="addr" type="text" class="form-control" placeholder="Addresse" required="required">
+                            <input type="text" class="form-control" placeholder="Adresse" required="required">
                         </div>
                         <div class="form-group">
-                            <textarea name="msg" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="ENVOYEZ VOTRE MESSAGE" class="btn btn-primary py-3 px-5">
@@ -151,7 +155,7 @@
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">WESHOP</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                     </div>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -159,21 +163,10 @@
                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <div class="ftco-footer-widget mb-4 ml-md-5">
-                        <h2 class="ftco-heading-2">Quick Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">About</a></li>
-                            <li><a href="#" class="py-2 d-block">Features</a></li>
-                            <li><a href="#" class="py-2 d-block">Projects</a></li>
-                            <li><a href="#" class="py-2 d-block">Blog</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
                 <div class="col-md-4 pr-md-4">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Recent Blog</h2>
+                        <h2 class="ftco-heading-2">Dernières nouvelles</h2>
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                             <div class="text">
@@ -200,12 +193,12 @@
                 </div>
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Contact Info</h2>
+                        <h2 class="ftco-heading-2">Nous contacter</h2>
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
-                                <li><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></li>
-                                <li><a href="contact.html"><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
                             </ul>
                         </div>
                     </div>

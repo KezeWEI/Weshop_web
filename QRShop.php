@@ -41,7 +41,12 @@
                         <li class="nav-item active"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                        <li class="nav-item cta"><a href="index.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+                    
+
+                        <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                        <li class="nav-item cta"><a href="QRshop_CH.html" class="nav-link">中文 / FR</a></li>
                     </ul>
                 </div>
 
@@ -54,7 +59,7 @@
             <div class="container-fluid">
                 <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
                     <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Services</span></p>
+                        
                         <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">QRshop</h1>
                     </div>
                 </div>
@@ -65,8 +70,8 @@
         <div class="container">
             <center><h2 class="mb-2">Qu'est-ce que QRshop</h2></center>
             <br/><br/>
-            <p>QRshop est une application pour smartphone développée indépendamment par WeShop, qui permet aux clients de passer leur commande en scandant le QR code des restaurants. Cette application vous offre une solution intégrée de gestion intelligente de vos établissements.</p>
-            <p>Avec QRshop vos clients ont plusieurs possibilités: commander leur plat à emporter, en livraison ou réserver pour dîner. Vous pouvez également gérer les informations des clients grâce au système de gestion de fidélité et leur envoyer des informations de promotion.</p>
+            <p>QRshop est une application pour smartphone développée indépendamment par WeShop, qui permet aux clients de passer leur commande en scannant le QR code des restaurants. Cette application vous offre une solution intégrée de gestion intelligente de vos établissements.</p>
+            <p>Avec QRshop, vos clients ont plusieurs possibilités: commander leur plat à emporter, en livraison ou réserver pour dîner. Vous pouvez également gérer les informations des clients grâce au système de gestion de fidélité et leur envoyer des informations de promotion.</p>
         </div>
 
 
@@ -92,7 +97,7 @@
                             <div class="d-flex justify-content-center"><div class="icon" class="icon"><img src="images/qrshop2.png" height="150" width="150"></div></div>
                             <div class="media-body p-2 mt-3">
                                 <h3 class="heading">2. Inscription</h3>
-                                <p>Gréez votre boutique avec votre numéro de téléphone portable</p>
+                                <p>Gérez votre boutique avec votre numéro de téléphone portable</p>
                             </div>
                         </div>    
                     </div>
@@ -184,7 +189,7 @@
                     <div class="col-md-3">
                         <div class="ftco-footer-widget mb-4">
                             <h2 class="ftco-heading-2">WESHOP</h2>
-                            <p>Weshop est un fournisseur des caisses enregistreuses tactiles. Weshop met à votre disposition des équipements de caisse complets et des logiciels, aussi des équipements réseaux( routeur, téléphone portable ).</p>
+                            <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                         </div>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -192,21 +197,10 @@
                             <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2">
-                        <div class="ftco-footer-widget mb-4 ml-md-5">
-                            <h2 class="ftco-heading-2">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">About</a></li>
-                                <li><a href="#" class="py-2 d-block">Features</a></li>
-                                <li><a href="#" class="py-2 d-block">Projects</a></li>
-                                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                                <li><a href="#" class="py-2 d-block">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4 pr-md-4">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Recent Blog</h2>
+                            <h2 class="ftco-heading-2">Dernières nouvelles</h2>
                             <div class="block-21 mb-4 d-flex">
                                 <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                                 <div class="text">
@@ -233,7 +227,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Contact Info</h2>
+                            <h2 class="ftco-heading-2">Nous contacter</h2>
                             <div class="block-23 mb-3">
                                 <ul>
                                     <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
