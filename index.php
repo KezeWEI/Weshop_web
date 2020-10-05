@@ -769,20 +769,14 @@
     <!--检测IP-->
     <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript">
-                                    console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
-                                    var ip_client = returnCitySN["cip"];
+        console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+        var ip_client = returnCitySN["cip"];
     </script>
-    <!--另一种通过php检测ip的方法-->
-    <?php
-    $ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取服务端的局域网IP
-    $externalContent = file_get_contents('http://checkip.dyndns.com/');
-    preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-    $ip_extern = $m[1]//赋值客户端外网IP
-    ?>
+
     <!--检测是否有人工在线-->
     <?php
-    require 'conn_chat.php';
-    $status = mysqli_query($db, "SELECT COUNT(status) FROM admin WHERE status = 1");
+    require 'conn.php';
+    $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminList WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
         $online = 1;
@@ -796,10 +790,9 @@
     ?>
     <!--客服人工回复-->
     <script>
-        console.log("<?php echo $ip_extern; ?>" + " " + "<?php echo $ip_local; ?>");
         var online = "<?php echo $online; ?>";
         $(function () {
-            var wsurl = 'ws://192.168.1.100:8000';
+            var wsurl = 'ws://192.168.1.120:8000';
             var websocket;
             var i = 0;
             if (window.WebSocket) {
@@ -810,7 +803,7 @@
                     if (online == '1') {
                         $('.chatBox-content-demo').append(reply('Bonjour, avez-vous des questions ?'));
                     } else if (online == '0') {
-                        $('.chatBox-content-demo').append(reply('Bonjour, il n`y a personne sur ligne.'));
+                        $('.chatBox-content-demo').append(reply('Bonjour, il n\'y a personne sur ligne.'));
                         $('.chatBox-content-demo').append(reply('Vous pouvez laissier votre coordonnées et nous allons vous repondre des que possible.'));
                         $('.chatBox-content-demo').append(reply('<a href="contact.php">Laissier vos messages ici</a>.'));
                     }
