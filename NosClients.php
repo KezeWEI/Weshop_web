@@ -51,26 +51,6 @@
                 </div>
 
             </div>      
-        </nav><nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-            <div class="container">
-                <img src="images/title.png" class="Accueil">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="index.html" class="nav-link">ACCUEIL</a></li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">PRÉSENTATION</a></li>
-                        <li class="nav-item"><a href="services.html" class="nav-link">PRODUITS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="work.html">QRSHOP</a></li>
-                        <li class="nav-item active"><a href="nos_clients.html" class="nav-link">NOSCLIENTS</a></li>
-                        <!--<li class="nav-item"><a href="blog.html" class="nav-link">BLOG</a></li>-->
-                        <li class="nav-item"><a href="contact.html" class="nav-link">CONTACT</a></li>
-                        <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
-                    </ul>
-                </div>
-            </div>
         </nav>
         <!-- END nav -->
 
@@ -483,7 +463,7 @@
             console.log("<?php echo $ip_extern; ?>" + " " + "<?php echo $ip_local; ?>");
             var online = "<?php echo $online; ?>";
             $(function () {
-                var wsurl = 'ws://192.168.1.100:8000';
+                var wsurl = 'ws://192.168.1.120:8000';
                 var websocket;
                 var i = 0;
                 if (window.WebSocket) {

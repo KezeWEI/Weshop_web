@@ -463,7 +463,7 @@
             console.log("<?php echo $ip_extern; ?>" + " " + "<?php echo $ip_local; ?>");
             var online = "<?php echo $online; ?>";
             $(function () {
-                var wsurl = 'ws://192.168.1.100:8000';
+                var wsurl = 'ws://192.168.1.120:8000';
                 var websocket;
                 var i = 0;
                 if (window.WebSocket) {
