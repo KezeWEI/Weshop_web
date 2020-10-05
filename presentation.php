@@ -43,7 +43,11 @@
                         <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                        <li class="nav-item cta"><a href="index.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+
+                        <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                        <li class="nav-item cta"><a href="presentation_CH.html" class="nav-link">中文 / FR</a></li>
                     </ul>
                 </div>
 
@@ -56,7 +60,7 @@
             <div class="container-fluid">
                 <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
                     <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
+                        
                         <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A Propos De Weshop</h1>
                     </div>
                 </div>
@@ -122,7 +126,7 @@
                                     <div>
                                         <h2 class="mb-4">Notre Société</h2>
                                         <p>Weshop, crée en 2015, est une entreprise spécialisée dans le conseil en systèmes et le développement de logiciels informatiques pour les caisses enregistreuses. Aussi évolué qu’une caisse enregistreuse tactile, notre logiciel vous permet de simplifier la gestion de vos ventes et de vos produits tout en ayant un meilleur contrôle sur votre commerce.</p>
-                                        <p>Weshop jouit d'une bonne réputation dans domaine. Jusqu'à présent, weshop compte des milliers de clients en France.</p>
+                                        <p>Weshop jouit d'une bonne réputation et compte jusqu'à présent des milliers de clients en France.</p>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +150,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
                                     <div>
                                         <h2 class="mb-4">Nos Missions</h2>
-                                        <p>En Weshop, nous pouvons vous fournir des conseils d'achat en fonction de votre budget. La société propose également à ses clients des solutions personnalisées et met à disposition de divers services : installation et configuration des équipements, formation sur un produit, maintenance à distance ou sur place, service après-vente et contact de différentes hotlines.</p>
+                                        <p>Chez Weshop, nous vous fournissons des conseils d'achat en fonction de votre budget. La société propose également à ses clients des solutions personnalisées et met à disposition divers services : installation et configuration des équipements, formation d'utilisation, maintenance à distance ou sur place, service après-vente et contact de différentes hotlines.</p>
                                         <p>Nous sommes prêts à vous servir à tout moment.</p>
                                     </div>
                                 </div>
@@ -176,8 +180,8 @@
                                 <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
                                     <div>
                                         <h2 class="mb-4">Nos Objectifs</h2>
-                                        <p>Nous intervenons avec pour principe de partager notre savoir-faire et d’assurer une complète autonomie à nos clients. Écouter les besoins des clients pour garantir que les produits soient en adéquation avec ces derniers.</p>
-                                        <p>Notre entreprise est dans une démarche d'innovation constante afin de consolider ses acquis et développer notre compétitivité dans le secteur.</p>
+                                        <p>Nous intervenons dans le but de partager notre savoir-faire et d’assurer une complète autonomie à nos clients. Écouter les besoins de nos clients afin de garantir des produits qui soient en adéquation avec ces derniers.</p>
+                                        <p>Notre entreprise tend vers l'innovation constante afin de consolider ses acquis et de développer notre compétitivité dans le secteur.</p>
                                     </div>
                                 </div>
                             </div>
@@ -192,8 +196,8 @@
                 <div class="row mb-5">
                     <div class="col-md-3">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Weshop</h2>
-                            <p>Weshop est un fournisseur pour les caisses enregistreuses tactiles. Weshop met à votre disposition des équipements et des logiciels de caisse complets, aussi des équipements de réseau( routeur, téléphone portable).</p>
+                            <h2 class="ftco-heading-2">WESHOP</h2>
+                            <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                         </div>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -201,18 +205,7 @@
                             <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2">
-                        <div class="ftco-footer-widget mb-4 ml-md-5">
-                            <h2 class="ftco-heading-2">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">About</a></li>
-                                <li><a href="#" class="py-2 d-block">Features</a></li>
-                                <li><a href="#" class="py-2 d-block">Projects</a></li>
-                                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                                <li><a href="#" class="py-2 d-block">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4 pr-md-4">
                         <div class="ftco-footer-widget mb-4">
                             <h2 class="ftco-heading-2">Recent Blog</h2>

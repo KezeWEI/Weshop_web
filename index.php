@@ -42,7 +42,12 @@
                         <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                        
                         <li class="nav-item cta"><a href="#devis" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+                        
+                        
+                        <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                        <li class="nav-item cta"><a href="index_CH.html" class="nav-link">中文 / FR</a></li>
                     </ul>
                 </div>
 
@@ -66,7 +71,7 @@
                                 <span class="wrap"></span>
                             </strong>
                         </h1>
-                        <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Votre bon assistant de gestion !</p>
+                        <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Votre meilleur assistant de gestion !</p>
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                             <a href="#devis" class="btn btn-primary px-4 py-3 mt-3">DEMANDER UN DEVIS</a> 
                             <a href="#" class="btn btn-primary btn-outline-primary px-4 py-3 mt-3">Nos Produits</a>
@@ -128,7 +133,7 @@
                                     <span><img class="icon" src="images/client.png"></span>
                                 </div>
                                 <div class="text">
-                                    <h3>Notre équipements</h3>
+                                    <h3>Notre équipement</h3>
                                     <p>Peut être utilisé sur les caisses, les téléphones mobiles, les tablettes et autres appareils. Prise en charge des systèmes Windows et Linux.</p>
                                 </div>
                             </div>
@@ -198,7 +203,7 @@
                 <div class="row justify-content-center mb-5 pb-5">
                     <div class="col-md-7 text-center heading-section ftco-animate">
                         <h2 class="mb-2">LE MATÉRIEL</h2>
-                        <span class="subheading">We're Happy to share our complete Projects</span>
+                        <span class="subheading">Chez Weshop, nous vous fournissons les meilleurs caisses</span>
                     </div>
                 </div>
                 <div class="row">
@@ -248,7 +253,7 @@
                 <div class="row justify-content-center mb-5 pb-5">
                     <div class="col-md-7 text-center heading-section ftco-animate">
                         <h2 class="mb-2">DEVIS CAISSE ENREGISTREUSE EN LIGNE</h2>
-                        <span class="subheading">Pricing Plans</span>
+                        <span class="subheading">Recevez votre devis en logiciel et matériel de caisse gratuitement</span>
                     </div>
                 </div>
             </div>
@@ -326,21 +331,21 @@
                                 <div class="row">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="telephone" class="form-control" id="telephone" placeholder="Tel *" required="required">
+                                        <input type="text" name="telephone" class="form-control" id="telephone" placeholder="Tél *" required="required">
                                     </div>
                                 </div>
                                 </br>
                                 <div class="row">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="postcode" class="form-control" id="postcode" placeholder="Code postale" required="required">
+                                        <input type="text" name="postcode" class="form-control" id="postcode" placeholder="Code postal" required="required">
                                     </div>
                                 </div>
                                 </br>
                                 <div class="row">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="address" class="form-control" id="address" placeholder="Addresse" required="required">
+                                        <input type="text" name="address" class="form-control" id="address" placeholder="Adresse" required="required">
                                     </div>
                                 </div>
                                 </br>
@@ -400,7 +405,7 @@
                                         <br>
                                         <div style="display:inline">
                                             <b>Addresse: </b>
-                                            <span id="addressPrint">Addresse</span>
+                                            <span id="addressPrint">Adresse</span>
                                         </div>
                                         <br>
                                         <div style="display:inline">
@@ -476,7 +481,7 @@
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">WESHOP</h2>
-                        <p>Weshop est un fournisseur pour les caisses enregistreuses tactiles. Weshop met à votre disposition des équipements et des logiciels de caisse complets, aussi des équipements de réseau( routeur, téléphone portable).</p>
+                        <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                     </div>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                         <li class="ftco-animate"><a href="#"><span class="icon-wechat"></span></a></li>
@@ -484,21 +489,10 @@
                         <li class="ftco-animate"><a href="#"><span class="icon-message"></span></a></li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <div class="ftco-footer-widget mb-4 ml-md-5">
-                        <h2 class="ftco-heading-2">Quick Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">About</a></li>
-                            <li><a href="#" class="py-2 d-block">Features</a></li>
-                            <li><a href="#" class="py-2 d-block">Projects</a></li>
-                            <li><a href="#" class="py-2 d-block">Blog</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
                 <div class="col-md-4 pr-md-4">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Recent Blog</h2>
+                        <h2 class="ftco-heading-2">Dernières nouvelles</h2>
                         <div class="block-21 mb-4 d-flex">
                             <a id="tweet1_img" class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                             <div class="text">
@@ -525,10 +519,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Contact Info</h2>
+                        <h2 class="ftco-heading-2">Nous contacter</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny, 93000</span></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
                             </ul>
@@ -604,7 +598,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="product1Title" class="modal-title" id="modalLabel">Caisse</h4></div>
+                    <h4 id="product1Title" class="modal-title" id="modalLabel">Weshop</h4></div>
                 <div id="_modalDialog_body" class="modal-body">
                     <!--  设置这个div的大小，超出部分显示滚动条 -->
                         <div class="row">
@@ -613,13 +607,18 @@
                         </div>
                         <div class="col-md-4">
                             <h2>Introduction:</h2>
-                            <p id="product1Description"></p>
+                            <h4>Tablette</h4>
+                            <p><li>Sans ventilation, non bruyant et basse consommation</p>
+                            <p><li>Données 100% sécuritaire, 100% conservées  </p>
+                            <p><li>Durable, Ultralégère</p>
+                            <p><li>Prix très abordable </p>
+                            <p><li>Garantie jusqu’à illimité(selon le forfait)</p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <!--  <button type="submit" class="btn btn-primary">确定</button>-->
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
@@ -629,7 +628,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="product2Title" class="modal-title" id="modalLabel">Caisse</h4>
+                    <h4 id="product2Title" class="modal-title" id="modalLabel">Weshop</h4>
                 </div>
                 <div id="_modalDialog_body" class="modal-body">
                     <!--  设置这个div的大小，超出部分显示滚动条 -->
@@ -639,13 +638,18 @@
                         </div>
                         <div class="col-md-4">
                             <h2>Introduction:</h2>
-                            <h4 id="product2Description">balabalabalabala</h4>
+                            <h4>Caisse traditionnelle</h4>
+                            <p><li>Un écran et un PC réunis dans un seul appareil</p>
+                            <p><li>Adapté aux différentes activités commerciales</p>
+                            <p><li>Non bruyant et basse consommation</p>
+                            <p><li>Très bon rapport Qualité/Prix</p>
+                            <p><li>1 ans de garantie</p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <!--                        <button type="submit" class="btn btn-primary">确定</button>-->
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
@@ -655,7 +659,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="product3Title" class="modal-title" id="modalLabel">Caisse</h4></div>
+                    <h4 id="product3Title" class="modal-title" id="modalLabel">Weshop</h4></div>
                 <div id="_modalDialog_body" class="modal-body">
                     <!--  设置这个div的大小，超出部分显示滚动条 -->
                             <div class="row">
@@ -664,14 +668,18 @@
                         </div>
                         <div class="col-md-4">
                             <h2>Introduction:</h2>
-                            <h4 id="product3Description">balabalabalabala</h4>
+                            <h4>Télécommande portable</h4>
+                            <p><li>Connecté aux caisses enregistreuses</p>
+                            <p><li>Économiser le temps de commande</p>
+                            <p><li>Prix très attractif</p>
+                            <p><li>1 ans de garantie</p>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <!--   <button type="submit" class="btn btn-primary">确定</button>-->
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>

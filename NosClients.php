@@ -41,7 +41,12 @@
                         <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item active"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                        <li class="nav-item cta"><a href="index.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                        <li class="nav-item cta"><a href="NosClients_CH.html" class="nav-link">中文 / FR</a></li>
+                        
                     </ul>
                 </div>
 
@@ -74,8 +79,8 @@
             <div class="container-fluid">
                 <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
                     <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Team</span></p>
-                        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Team</h1>
+                        
+                        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Nos Clients</h1>
                     </div>
                 </div>
             </div>
@@ -85,8 +90,8 @@
             <div class="container">
                 <div class="row justify-content-center mb-5 pb-5">
                     <div class="col-md-7 text-center heading-section ftco-animate">
-                        <h2 class="mb-3">Nos Clients</h2>
-                        <span class="subheading">Les témoignages</span>
+                        <h2 class="mb-3">Les témoignages</h2>
+                        <span class="subheading">Nos clients sont satisfaits</span>
                     </div>
                 </div>
                 <div class="row">
@@ -97,7 +102,7 @@
                                 <h3><a href="teacher-single.html">Les Trois Royaumes</a></h3>
                                 <span class="position">5 Rue d’Enghien 75010 Paris</span>
                                 <div class="text">
-                                    <p>Un logiciel efficace et sécurisé, simple à utiliser, grâce à ce logiciel, nous avons gagné plus de temps à fidéliser nos nombreux clients pour augmenter nos chiffres d’affaires. Je le recommande vivement!</p>
+                                    <p>Un logiciel efficace et sécurisé, simple à utiliser, grâce à ce logiciel, nous avons gagné plus de temps à fidéliser nos nombreux clients pour augmenter nos chiffres d’affaires. Le service client est également très bon. Je le recommande vivement!</p>
                                 </div>
                             </div>
                         </div>
@@ -106,11 +111,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_xuan.jpg);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">T’xuan</a></h3>
-                                <span class="position">56 rue la Fayette 75009 Paris</span>
-                                <div class="text">
-                                    <p>Nous avons travaillé avec ce logiciel depuis le début. Nombreuses fonctions sont disponibles avec une interface propre. Les services après-vente sont impeccables. les personnels sont très aimables et toujours à notre disposition en cas de problème.</p>
-                                </div>
+                            <h3><a href="teacher-single.html">T’xuan</a></h3>
+                            <span class="position">56 rue la Fayette 75009 Paris</span>
+                            <div class="text">
+                                <p>Nous avons travaillé avec ce logiciel depuis le début. Nombreuses fonctions sont disponibles avec une interface propre. Les services après-vente sont impeccables. les personnels sont très aimables et toujours à notre disposition en cas de problème.</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -118,11 +123,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_iyo.jpg);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">IYO EURL MOGADOR</a></h3>
-                                <span class="position">19 rue de Mogador 75009 Paris</span>
-                                <div class="text">
-                                    <p>Logiciel avec utilisation flexible. L’accès aux chiffres d’affaires journaliers est facile. Les données sont présentées de façon ordonnée et claire, ce qui facilite la compréhension et la gestion de nos comptes. </p>
-                                </div>
+                            <h3><a href="teacher-single.html">IYO EURL MOGADOR</a></h3>
+                            <span class="position">19 rue de Mogador 75009 Paris</span>
+                            <div class="text">
+                                <p>Logiciel avec utilisation flexible. L’accès aux chiffres d’affaires journaliers est facile. Les données sont présentées de façon ordonnée et claire, ce qui facilite la compréhension et la gestion de nos comptes. Abordable et vaut la peine d'être acheté.</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -130,11 +135,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_nouilles.png);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">Les Pâtes Vivantes</a></h3>
-                                <span class="position">46 rue du faubourg Montmartre</span>
-                                <div class="text">
-                                    <p>Ce logiciel nous a permis de gagner beaucoup de temps lors de la prise des commandes. Avec ce logiciel, nous n’avons plus besoin d’écrire les commandes en plusieurs fois ni de faire des aller-retour vers la cuisine. C’est vraiment très pratique!</p>
-                                </div>
+                            <h3><a href="teacher-single.html">Les Pâtes Vivantes</a></h3>
+                            <span class="position">46 Rue du Faubourg Montmartre, 75009 Paris</span>
+                            <div class="text">
+                                <p>Ce logiciel nous a permis de gagner beaucoup de temps lors de la prise des commandes. Avec ce logiciel, nous n’avons plus besoin d’écrire les commandes en plusieurs fois ni de faire des aller-retour vers la cuisine. C’est vraiment très pratique!</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -145,11 +150,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_sichuan.jpg);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">Saveurs de Sichuan</a></h3>
-                                <span class="position">54 Rue du Faubourg Montmartre</span>
-                                <div class="text">
-                                    <p> La caisse développé par la société WEHSOP est vraiment très pratique car elle me permet de suivre mes statistiques de vente en temps réel. En tant que commerçants nous sommes écoutés, nos remarques sont prises en compte. Nous sommes très heureux avec notre choix. </p>
-                                </div>
+                            <h3><a href="teacher-single.html">Saveurs de Sichuan</a></h3>
+                            <span class="position">54 Rue du Faurbourg Montmartre, 75009 Paris</span>
+                            <div class="text">
+                                <p> La caisse développé par la société WEHSOP est vraiment très pratique car elle me permet de suivre mes statistiques de vente en temps réel. En tant que commerçants nous sommes écoutés, nos remarques sont prises en compte. Nous sommes très heureux avec notre choix. </p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -162,11 +167,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_2.png);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">Panasia</a></h3>
-                                <span class="position">40 Boulevard Haussmann,</span>
-                                <div class="text">
-                                    <p> Simple d’utilisation car intuitive, la solution de logiciel de caisse enregistreuse proposée par WEHSOP, me correspond parfaitement. Elle m’a offert un gain de temps considérable, que ce soit dans ma comptabilité, dans ma gestion des stocks. </p>
-                                </div>
+                            <h3><a href="teacher-single.html">Panasia</a></h3>
+                            <span class="position">40 Boulevard Haussmann, 75008 Paris</span>
+                            <div class="text">
+                                <p> Simple d’utilisation car intuitive, la solution de logiciel de caisse enregistreuse proposée par WEHSOP, me correspond parfaitement. Elle m’a offert un gain de temps considérable, que ce soit dans ma comptabilité, dans ma gestion des stocks. </p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -177,11 +182,11 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_3.png);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">Dicoeur</a></h3>
-                                <span class="position">45 Rue du Faubourg Montmartre</span>
-                                <div class="text">
-                                    <p> Les fonctionnalités de cette solution de caisse enregistreuse m’ont permis de la facilité de mon travail, interconnecté avec ma caisse enregistreuse, et la gestion de fidélité de mes clients et ils permettent de me consacrer plus pleinement à mon métier.</p>
-                                </div>
+                            <h3><a href="teacher-single.html">Dicoeur</a></h3>
+                            <span class="position">45 Rue du Faubourg Montmartre, 75009 Paris</span>
+                            <div class="text">
+                                <p> Les fonctionnalités de cette solution de caisse enregistreuse m’ont permis de la facilité de mon travail, interconnecté avec ma caisse enregistreuse, et la gestion de fidélité de mes clients et ils permettent de me consacrer plus pleinement à mon métier.</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -191,47 +196,26 @@
                         <div class="staff">
                             <div class="img mb-4" style="background-image: url(images/C_4.jpg);"></div>
                             <div class="info text-center">
-                                <h3><a href="teacher-single.html">Bonneapp</a></h3>
-                                <span class="position">26 Rue Richer 75009 Paris</span>
-                                <div class="text">
-                                    <p> Nos serveurs passent beaucoup moins de temps à s’occuper de faire les commandes sur place, livraison ou emporté, et cette caisse est facile à surveiller mes chiffres d'affaire, l'interface peut être compris sans problème. </p>
-                                </div>
+                            <h3><a href="teacher-single.html">Sa Jiao</a></h3>
+                            <span class="position">229 Rue du Faubourg Saint Martin 75010 Paris</span>
+                            <div class="text">
+                                <p> Nos serveurs passent beaucoup moins de temps à s’occuper de faire les commandes sur place, livraison ou emporté, et cette caisse est facile à surveiller mes chiffres d'affaire, l'interface peut être compris sans problème. </p>
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
         </section>
 
-        <section class="ftco-section-parallax">
-            <div class="parallax-img d-flex align-items-center">
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                            <h2>Subcribe to our Newsletter</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                            <div class="row d-flex justify-content-center mt-5">
-                                <div class="col-md-8">
-                                    <form action="#" class="subscribe-form">
-                                        <div class="form-group d-flex">
-                                            <input type="text" class="form-control" placeholder="Enter email address">
-                                            <input type="submit" value="Subscribe" class="submit px-3">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <footer class="ftco-footer ftco-bg-dark ftco-section">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-md-3">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Ultim8.</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h2 class="ftco-heading-2">WESHOP</h2>
+                            <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                         </div>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -239,21 +223,10 @@
                             <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2">
-                        <div class="ftco-footer-widget mb-4 ml-md-5">
-                            <h2 class="ftco-heading-2">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="py-2 d-block">About</a></li>
-                                <li><a href="#" class="py-2 d-block">Features</a></li>
-                                <li><a href="#" class="py-2 d-block">Projects</a></li>
-                                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                                <li><a href="#" class="py-2 d-block">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4 pr-md-4">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Recent Blog</h2>
+                            <h2 class="ftco-heading-2">Dernières nouvelles</h2>
                             <div class="block-21 mb-4 d-flex">
                                 <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                                 <div class="text">
@@ -280,12 +253,12 @@
                     </div>
                     <div class="col-md-3">
                         <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Contact Info</h2>
+                            <h2 class="ftco-heading-2">Nous contacter</h2>
                             <div class="block-23 mb-3">
                                 <ul>
-                                    <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
                                 </ul>
                             </div>
                         </div>

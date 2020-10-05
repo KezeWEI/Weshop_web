@@ -42,7 +42,11 @@
                         <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                        <li class="nav-item cta"><a href="index.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span>DEVIS</span></a></li>
+                        
+                        <li class="nav-item">&nbsp &nbsp &nbsp</li>
+                        <li class="nav-item cta"><a href="produits_CH.html" class="nav-link">中文 / FR</a></li>
                     </ul>
                 </div>
 
@@ -55,8 +59,8 @@
             <div class="container-fluid">
                 <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
                     <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
-                        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Nos Produits de Caisse</h1>
+                        
+                        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Nos Produits De Caisse</h1>
                     </div>
                 </div>
             </div>
@@ -122,7 +126,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
                                     <div>
                                         <h2 class="mb-4">Caisse traditionnelle</h2>
-                                        <p>Weshop Caisse vous offre un ensemble d’équipement et un logiciel d’encaissement adapté aux restaurants, salons de thé, supermarchés, détaillants et grossistes etc. Suivant vos besoins, vous pouvez acheter une caisse enregistreuse, un tiroir métallique, une imprimante et un afficheur client. Aussi évolué qu’une caisse enregistreuse tactile, notre logiciel vous permet de simplifier la gestion de vos ventes et de vos produits tout en ayant un meilleur contrôle sur votre commerce. Vous y trouverez des fonctionnalités très pratiques telles que la gestion des stocks et des commandes clients, la gestion des moyens de paiements et de vos statistiques, l’impression et la séparation des commandes selon les produits commandés, etc…</p>
+                                        <p>Weshop Caisse vous offre un ensemble d’équipement et un logiciel d’encaissement adapté aux restaurants, salons de thé, supermarchés, détaillants et grossistes etc. Suivant vos besoins, vous pouvez acheter une caisse enregistreuse, un tiroir métallique, une imprimante et un afficheur client. Autant évolué qu’une caisse enregistreuse tactile, notre logiciel vous permet de simplifier la gestion de vos ventes et de vos produits tout en ayant un meilleur contrôle sur votre commerce. Vous y trouverez des fonctionnalités très pratiques telles que la gestion des stocks et des commandes clients, la gestion des moyens de paiements et de vos statistiques, l’impression et la séparation des commandes selon les produits commandés, etc…</p>
                                     </div>
                                 </div>
                             </div>
@@ -146,8 +150,7 @@
                             <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
                                 <div>
                                     <h2 class="mb-4">Tablette</h2>
-                                    <p>Weshop vous offre la tablette d’encaissement qui est idéal pour des restaurants, salons de thé, cafés et bars etc. Vous pouvez choisir soit acheter notre tablette, soit choisir d'utiliser votre propre appareil et de louer uniquement notre logiciel. 
-                                        Durable, Ultralégère, puissance et performance exceptionnelles. Petit et exquis, il a également toutes les fonctions d'une caisse enregistreuse traditionnelle. Un prix abordable, choisir une tablette peut vous aider à économiser votre budget. En utilisant la tablette, vos données seront transmis et enregistrées sur le serveur. Cela vous permet de récupérer vos données complètement et en toute sécurité.
+                                    <p>Weshop vous offre la tablette d’encaissement idéale pour les restaurants, salons de thé, cafés et bars etc. Vous pouvez choisir soit d'acheter notre tablette, soit de choisir d'utiliser votre propre appareil et de louer uniquement notre logiciel. Durable, Ultralégère, puissance et performance exceptionnelles. Petit et exquis, il a également toutes les fonctions d'une caisse enregistreuse traditionnelle. Un prix abordable, choisir une tablette peut vous aider à économiser votre budget. La tablette sera connectée avec votre serveur en temps réel. Cela vous permettra de récupérer vos données intégralement et en toute sécurité.
                                     </p>
                                 </div>
                             </div>
@@ -179,9 +182,8 @@
 
                             <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
                                 <div>
-                                    <h2 class="mb-4">Application Mobile</h2>
-                                    <p>Connectée et pratique, vous pouvez utiliser votre smartphone comme terminal de prise de commande pour saisir les commandes des clients de votre restaurant directement en salle. Notre application mobile est utilisable en collaboration avec notre logiciel d’encaissement.</p>
-                                    <p>Avec l’application QRShop, vous pouvez non seulement saisir les commandes de vos clients directement à table mais aussi communiquer les articles saisis immédiatement aux différents postes de fabrication. Ainsi, cette application vous offre un confort d’utilisation inégalé et vous permet de gagner considérablement du temps.</p>
+                                    <h2 class="mb-4">Télécommande portable</h2>
+                                    <p>Weshop lance des téléphones portables qui peuvent être connectés au système de caisse enregistreuse. Vous pouvez utiliser votre smartphone comme terminal de prise de commande pour saisir les commandes des clients de votre restaurant directement en salle. Cela vous aidera à économiser le temps et les coûts de commande et donc à améliorer vos profits. C'est utilisable en collaboration avec notre logiciel d’encaissement.</p>
                                 </div>
                             </div>
                         </div>
@@ -193,36 +195,14 @@
 
 
 
-    <section class="ftco-section-parallax">
-        <div class="parallax-img d-flex align-items-center">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                        <h2>Subcribe to our Newsletter</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                        <div class="row d-flex justify-content-center mt-5">
-                            <div class="col-md-8">
-                                <form action="#" class="subscribe-form">
-                                    <div class="form-group d-flex">
-                                        <input type="text" class="form-control" placeholder="Enter email address">
-                                        <input type="submit" value="Subscribe" class="submit px-3">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Weshop</h2>
-                        <p>Weshop est un fournisseur pour les caisses enregistreuses tactiles. Weshop met à votre disposition des équipements et des logiciels de caisse complets, aussi des équipements de réseau( routeur, téléphone portable).</p>
+                        <h2 class="ftco-heading-2">WESHOP</h2>
+                        <p>Weshop est un fournisseur de caisses enregistreuses tactiles. Il met à votre disposition des équipements et des logiciels de caisse complets, ainsi que des équipements de réseau (routeur, téléphone portable).</p>
                     </div>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -230,21 +210,10 @@
                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <div class="ftco-footer-widget mb-4 ml-md-5">
-                        <h2 class="ftco-heading-2">Quick Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">About</a></li>
-                            <li><a href="#" class="py-2 d-block">Features</a></li>
-                            <li><a href="#" class="py-2 d-block">Projects</a></li>
-                            <li><a href="#" class="py-2 d-block">Blog</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
                 <div class="col-md-4 pr-md-4">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Recent Blog</h2>
+                        <h2 class="ftco-heading-2">Dernières nouvelles</h2>
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                             <div class="text">
@@ -271,7 +240,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Contact Info</h2>
+                        <h2 class="ftco-heading-2">Nous contacter</h2>
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
