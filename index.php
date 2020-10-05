@@ -444,20 +444,20 @@
             $.ajax({url: 'changeData.php', type: 'post', data: {table: 'productlist', sql: 'SELECT * FROM productList;'}}).done(function (msg) {
                 //php中json转js数组
                 var data_obj = eval(msg);
-                console.log(data_obj);
                 for (var i = 0; i < 3; i++) {
                     var pruductNum = i + 1;
                     $("#product" + pruductNum + "_title").text(data_obj[i].title);
                     document.getElementById("product" + pruductNum + "_img").style.backgroundImage = "url('" + data_obj[i].imageUrl + "')";
                     $("#product" + pruductNum + "Title").text(data_obj[i].title);
-                    $("#product" + pruductNum + "Description").text(data_obj[i].description);
+                    //.text不能换行，不识别<br>,.html识别
+                    $("#product" + pruductNum + "Description").html(data_obj[i].description);
+                    // $("#product" + pruductNum + "Description").html("和气吹绿野，梅雨洒芳田。<br/>新流添旧涧，宿雾足朝烟。");
                     $("#product" + pruductNum + "Image").attr('src', data_obj[i].imageUrl);
                 }
             })
             $.ajax({url: 'changeData.php', type: 'post', data: {table: 'wechatlist', sql: 'SELECT * FROM wechatList;'}}).done(function (msg) {
                 //php中json转js数组
                 var data_obj = eval(msg);
-                console.log(data_obj);
                 for (var i = 0; i < 2; i++) {
                     var pruductNum = i + 1;
                     $("#tweet" + pruductNum + "_title").text(data_obj[i].title);
@@ -613,7 +613,7 @@
                         </div>
                         <div class="col-md-4">
                             <h2>Introduction:</h2>
-                            <h4 id="product1Description">balabalabalabala</h4>
+                            <p id="product1Description"></p>
                         </div>
                     </div>
                 </div>
@@ -784,7 +784,6 @@
     $online = 1;
     ?>
     <!--客服人工回复-->
-<!-- <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> -->
     <script>
         console.log("<?php echo $ip_extern; ?>" + " " + "<?php echo $ip_local; ?>");
         var online = "<?php echo $online; ?>";
