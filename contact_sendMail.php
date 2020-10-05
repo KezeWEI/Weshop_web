@@ -114,8 +114,7 @@ $body .= "message : <br> $msg";
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
-
+        <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
@@ -137,11 +136,18 @@ $body .= "message : <br> $msg";
                 <p style="float: left">Votre message :<br>
                     <?php echo $msg; ?>
                 </p>
+                
+                <br><br><br>
+                <button class="ui button"><a href="contact.php">Retourner</a></button>
             </div>
         </div>
         <!-- 成功部分代码结束 -->
     </body>
 </html>
+<script>
+function back(){
+    
+}</script>
 
 <!-- 发送邮件 -->
 <?php
@@ -164,7 +170,7 @@ $mail->isSMTP();
 $mail->Host = "smtp.qq.com";
 $mail->SMTPAuth = true;
 $mail->Username = "384413301@qq.com";
-$mail->Password = 'weugvljxuqbcbhii';
+$mail->Password = '';
 $mail->Port = 465;
 $mail->SMTPSecure = "ssl";
 
