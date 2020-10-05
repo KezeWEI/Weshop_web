@@ -418,7 +418,7 @@
     <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>  
     <script>
         //提交表单后执行
-        $('#formDevis').submit(function() {
+        $('#formDevis').submit(function () {
             $("#beforeSubmit").hide();
             $("#afterSubmit").show();
             //取单选框的值
@@ -781,7 +781,18 @@
     ?>
     <!--检测是否有人工在线-->
     <?php
-    $online = 1;
+    require 'conn_chat.php';
+    $status = mysqli_query($db, "SELECT COUNT(status) FROM admin WHERE status = 1");
+    $res = mysqli_fetch_array($status);
+    if ($res[0] != 0) {
+        $online = 1;
+        echo '<script>console.log ("client is online");</script>';
+    } else if ($res[0] == 0) {
+        $online = 0;
+        echo '<script>console.log ("client is offline");</script>';
+    } else {
+        echo '<script>console.log ("error");</script>';
+    }
     ?>
     <!--客服人工回复-->
 <!-- <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> -->
@@ -797,7 +808,13 @@
                 //连接建立
                 websocket.onopen = function (event) {
                     console.log("Connected to WebSocket server.");
-                    $('.chatBox-content-demo').append(reply('Bonjour, avez-vous des questions ?'));
+                    if (online == '1') {
+                        $('.chatBox-content-demo').append(reply('Bonjour, avez-vous des questions ?'));
+                    } else if (online == '0') {
+                        $('.chatBox-content-demo').append(reply('Bonjour, il n`y a personne sur ligne.'));
+                        $('.chatBox-content-demo').append(reply('Vous pouvez laissier votre coordonnées et nous allons vous repondre des que possible.'));
+                        $('.chatBox-content-demo').append(reply('<a href="contact.php">Laissier vos messages ici</a>.'));
+                    }
                 }
                 //收到消息
                 websocket.onmessage = function (event) {
@@ -811,7 +828,7 @@
                         $('.chatBox-content-demo').append(reply(re));
                     }
                     $('#msg_client').val('');
-                    window.location.hash = '#' + i;
+                    //window.location.hash = '#' + i;
                 }
 
                 //发生错误
@@ -819,44 +836,49 @@
                     i++;
                     console.log("Connected to WebSocket server error");
                     $('.chatBox-content-demo').append(reply('Connect to the server error.'));
-                    window.location.hash = '#' + i;
+                    //window.location.hash = '#' + i;
                 }
 
                 //连接关闭
                 websocket.onclose = function (event) {
                     i++;
                     console.log('websocket Connection Closed. ');
-                    $('.chatBox-content-demo').append(reply('Connection Closed.'));
-                    window.location.hash = '#' + i;
+                    $('.chatBox-content-demo').append(reply('Le service est temporairement suspendu pendant la maintenance du serveur.'));
+                    //window.location.hash = '#' + i;
                 }
 
                 function send() {
+                    var ip = ip_client;
                     var message = $('#msg_client').val();
+                    var time = timenow();
                     if (!message) {
                         return false;
                     }
                     var msg = {
                         type: "clientmsg",
-                        name: ip_client,
+                        name: ip,
                         message: message
                     };
-                    try {
-                        websocket.send(JSON.stringify(msg));
-                        repeatClientMsg(message);
-                        document.getElementById('msg_client').value = "";
-                        console.log('send msg : ' + JSON.stringify(msg));
-                    } catch (ex) {
-                        console.log(ex);
-                    }
+                    websocket.send(JSON.stringify(msg));
+                    repeatClientMsg(message);
+                    document.getElementById('msg_client').value = "";
+                    $.get('./chat_data.php?act=msg', {ip: ip, msg: message, time: time, others: "msg online"});
+                    console.log('send msg : ' + JSON.stringify(msg));
                 }
 
                 //按下enter键发送消息
                 $(window).keydown(function (event) {
                     if (event.keyCode == 13) {
+                        var ip = ip_client;
                         var textContent = $("#msg_client").val();
-                        send();
-                        if (online != '1') {
+                        var time = timenow();
+                        if (online == '1') {
+                            send();
+                        } else if (online != '1') {
                             if (textContent != "") {
+                                repeatClientMsg(textContent);
+                                document.getElementById('msg_client').value = "";
+                                $.get('./chat_data.php?act=msg', {ip: ip, msg: textContent, time: time, others: "msg offline"});
                                 //聊天框默认最底部
                                 $(document).ready(function () {
                                     $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
@@ -886,9 +908,15 @@
 
                 //点发送按钮发送消息
                 $("#chat-fasong").click(function () {
+                    var ip = ip_client;
                     var textContent = $("#msg_client").val();
-                    send();
-                    if (online != '1') {
+                    var time = timenow();
+                    if (online == '1') {
+                        send();
+                    } else if (online != '1') {
+                        repeatClientMsg(textContent);
+                        document.getElementById('msg_client').value = "";
+                        $.get('./chat_data.php?act=msg', {ip: ip, msg: textContent, time: time, others: "msg offline"});
                         if (textContent != "") {
                             //聊天框默认最底部
                             $(document).ready(function () {
@@ -911,7 +939,6 @@
                                 var re = "Questions susceptibles de vous intéresser: <br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(1)\",600)>1.balabala1</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(2)\",600)>2.balabala2 </a><br><a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(3)\",600)>3.balabala3</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(4)\",600)>4.balabala4</a>";
                                 reply(re);
                             }
-
                         }
                     }
                 });
