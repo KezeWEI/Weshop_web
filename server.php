@@ -1,10 +1,10 @@
-//测试用，用于获取局域网IP和外网IP
-//<?php
-//$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
-//$externalContent = file_get_contents('http://checkip.dyndns.com/');
-//preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-//$ip_extern = $m[1]//赋值客户端外网IP
-//?>
+<!--测试用，用于获取局域网IP和外网IP-->
+<?php
+$ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取客户端的局域网IP
+$externalContent = file_get_contents('http://checkip.dyndns.com/');
+preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+$ip_extern = $m[1]//赋值客户端外网IP
+?>
 
 <?php
 //本地测试时使用局域网IP，加载到外网服务器之前切记修改为外网IP
@@ -72,7 +72,7 @@ while (true) {
             if ($msg_type == 'clientmsg') {//如果是客户消息则定向发送给weshop
                 $msg_to_weshop = mask(json_encode(array('type' => 'clientmsg', 'name' => $ip, 'message' => $user_message)));
                 socket_sendto($weshop, $msg_to_weshop, strlen($msg_to_weshop), 0, $host, $port);
-                send_msg($testmsg, $host);
+                //send_msg($testmsg, $host);
             } else if ($msg_type == 'system') {
                 $testmsg2 = mask(json_encode(array('type' => 'system', 'name' => $ip, 'message' => '来自' . $ip . '的系统消息')));
                 socket_sendto($weshop, $testmsg2, strlen($testmsg2), 0, $host, $port);
@@ -101,7 +101,7 @@ socket_close($sock);
 function send_msg($msg, $ip) {
     global $clients;
     foreach ($clients as $search_client) {
-        socket_getpeername($search_client, $ip_client);
+        socket_getpeername ($search_client, $ip_client);
         if ($ip == $ip_client) {
             socket_sendto($search_client, $msg, strlen($msg), 0, $ip, $port);
         }

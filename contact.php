@@ -86,24 +86,24 @@
             </div>
             <div class="row block-9">
                 <div class="col-md-6 pr-md-5">
-                    <form action="#">
+                    <form action="contact_sendMail.php" method="get">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nom de la société *" required="required">
+                            <input name="societe" type="text" class="form-control" placeholder="Nom de la société *" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Mail *" required="required">
+                            <input name="email" type="text" class="form-control" placeholder="Mail *" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Tel *" required="required">
+                            <input name="tel" type="text" class="form-control" placeholder="Tel *" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Code postale" required="required">
+                            <input name="postale" type="text" class="form-control" placeholder="Code postale" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Addresse" required="required">
+                            <input name="addr" type="text" class="form-control" placeholder="Addresse" required="required">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="msg" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="ENVOYEZ VOTRE MESSAGE" class="btn btn-primary py-3 px-5">
