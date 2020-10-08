@@ -42,10 +42,10 @@
                         <li class="nav-item"><a class="nav-link" href="QRShop.php">QRshop</a></li>
                         <li class="nav-item"><a href="NosClients.php" class="nav-link">NosClients</a></li>
                         <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                        
+
                         <li class="nav-item cta"><a href="#devis" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>DEVIS</span></a></li>
-                        
-                        
+
+
                         <li class="nav-item">&nbsp &nbsp &nbsp</li>
                         <li class="nav-item cta"><a href="index_CH.html" class="nav-link">中文 / FR</a></li>
                     </ul>
@@ -489,7 +489,7 @@
                         <li class="ftco-animate"><a href="#"><span class="icon-message"></span></a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-md-4 pr-md-4">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Dernières nouvelles</h2>
@@ -609,10 +609,10 @@
                             <h2>Introduction:</h2>
                             <h4>Tablette</h4>
                             <p><li>Sans ventilation, non bruyant et basse consommation</p>
-                            <p><li>Données 100% sécuritaire, 100% conservées  </p>
-                            <p><li>Durable, Ultralégère</p>
-                            <p><li>Prix très abordable </p>
-                            <p><li>Garantie jusqu’à illimité(selon le forfait)</p>
+                                <p><li>Données 100% sécuritaire, 100% conservées  </p>
+                                <p><li>Durable, Ultralégère</p>
+                                <p><li>Prix très abordable </p>
+                                <p><li>Garantie jusqu’à illimité(selon le forfait)</p>
                         </div>
                     </div>
                 </div>
@@ -640,10 +640,10 @@
                             <h2>Introduction:</h2>
                             <h4>Caisse traditionnelle</h4>
                             <p><li>Un écran et un PC réunis dans un seul appareil</p>
-                            <p><li>Adapté aux différentes activités commerciales</p>
-                            <p><li>Non bruyant et basse consommation</p>
-                            <p><li>Très bon rapport Qualité/Prix</p>
-                            <p><li>1 ans de garantie</p>
+                                <p><li>Adapté aux différentes activités commerciales</p>
+                                <p><li>Non bruyant et basse consommation</p>
+                                <p><li>Très bon rapport Qualité/Prix</p>
+                                <p><li>1 ans de garantie</p>
                         </div>
                     </div>
                 </div>
@@ -670,9 +670,9 @@
                             <h2>Introduction:</h2>
                             <h4>Télécommande portable</h4>
                             <p><li>Connecté aux caisses enregistreuses</p>
-                            <p><li>Économiser le temps de commande</p>
-                            <p><li>Prix très attractif</p>
-                            <p><li>1 ans de garantie</p>
+                                <p><li>Économiser le temps de commande</p>
+                                <p><li>Prix très attractif</p>
+                                <p><li>1 ans de garantie</p>
                         </div>
                     </div>
 
@@ -716,10 +716,10 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <div class="chatBox-send">
-                        <!-- <div class="div-textarea"></div> -->
                         <div>
                             <input class="div-textarea" id="msg_client" style="border: 0px;">
                         </div>
@@ -774,16 +774,20 @@
         </div>
     </div>
     <!-- 客服自动回复聊天框部分结束 -->
+
+    <!--socket.io-->
+<!--    <script src="js/chat.js"></script>
+    <script src="/socket.io/socket.io.js"></script>-->
     <!--检测IP-->
     <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript">
-        console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
-        var ip_client = returnCitySN["cip"];
+                                    var ip_client = returnCitySN["cip"];
     </script>
 
     <!--检测是否有人工在线-->
     <?php
-    require 'conn.php';
+    require 'conn_chat.php';
+    $host = '192.168.1.100';
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminList WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
@@ -796,156 +800,42 @@
         echo '<script>console.log ("error");</script>';
     }
     ?>
+
     <!--客服人工回复-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/socket.js"></script>
+    <script src="js/chat.js">
+    </script>
+
     <script>
-        var online = "<?php echo $online; ?>";
-        $(function () {
-            var wsurl = 'ws://192.168.1.120:8000';
-            var websocket;
-            var i = 0;
-            if (window.WebSocket) {
-                websocket = new WebSocket(wsurl);
-                //连接建立
-                websocket.onopen = function (event) {
-                    console.log("Connected to WebSocket server.");
-                    if (online == '1') {
-                        $('.chatBox-content-demo').append(reply('Bonjour, avez-vous des questions ?'));
-                    } else if (online == '0') {
-                        $('.chatBox-content-demo').append(reply('Bonjour, il n\'y a personne sur ligne.'));
-                        $('.chatBox-content-demo').append(reply('Vous pouvez laissier votre coordonnées et nous allons vous repondre des que possible.'));
-                        $('.chatBox-content-demo').append(reply('<a href="contact.php">Laissier vos messages ici</a>.'));
-                    }
-                }
-                //收到消息
-                websocket.onmessage = function (event) {
-                    var msg = JSON.parse(event.data); //解析收到的json消息数据
-                    console.log('received msg :　' + JSON.stringify(msg));
-                    var type = msg.type; // 消息类型
-                    var re = msg.message; //消息文本
-                    var ip = msg.name; //发送人
-                    i++;
-                    if (type == 'weshop') {
-                        $('.chatBox-content-demo').append(reply(re));
-                    }
-                    $('#msg_client').val('');
-                    //window.location.hash = '#' + i;
-                }
-
-                //发生错误
-                websocket.onerror = function (event) {
-                    i++;
-                    console.log("Connected to WebSocket server error");
-                    $('.chatBox-content-demo').append(reply('Connect to the server error.'));
-                    //window.location.hash = '#' + i;
-                }
-
-                //连接关闭
-                websocket.onclose = function (event) {
-                    i++;
-                    console.log('websocket Connection Closed. ');
-                    $('.chatBox-content-demo').append(reply('Le service est temporairement suspendu pendant la maintenance du serveur.'));
-                    //window.location.hash = '#' + i;
-                }
-
-                function send() {
-                    var ip = ip_client;
-                    var message = $('#msg_client').val();
-                    var time = timenow();
-                    if (!message) {
-                        return false;
-                    }
-                    var msg = {
-                        type: "clientmsg",
-                        name: ip,
-                        message: message
-                    };
-                    websocket.send(JSON.stringify(msg));
-                    repeatClientMsg(message);
-                    document.getElementById('msg_client').value = "";
-                    $.get('./chat_data.php?act=msg', {ip: ip, msg: message, time: time, others: "msg online"});
-                    console.log('send msg : ' + JSON.stringify(msg));
-                }
-
-                //按下enter键发送消息
-                $(window).keydown(function (event) {
-                    if (event.keyCode == 13) {
-                        var ip = ip_client;
-                        var textContent = $("#msg_client").val();
-                        var time = timenow();
-                        if (online == '1') {
-                            send();
-                        } else if (online != '1') {
-                            if (textContent != "") {
-                                repeatClientMsg(textContent);
-                                document.getElementById('msg_client').value = "";
-                                $.get('./chat_data.php?act=msg', {ip: ip, msg: textContent, time: time, others: "msg offline"});
-                                //聊天框默认最底部
-                                $(document).ready(function () {
-                                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
-                                });
-                                document.getElementById('timenow').innerHTML = timenow();
-                                if (textContent.indexOf("balabala1") != "-1" || textContent.indexOf("1") != "-1") {
-                                    var re = "<a href=\"#devis\">Rua~</a>";
-                                    reply(re);
-                                } else if (textContent.indexOf("balabala2") != "-1" || textContent.indexOf("2") != "-1") {
-                                    var re = "RuaRua~";
-                                    reply(re);
-                                } else if (textContent.indexOf("balabala3") != "-1" || textContent.indexOf("3") != "-1") {
-                                    var re = "RuaRuaRua~";
-                                    reply(re);
-                                } else if (textContent.indexOf("balabala4") != "-1" || textContent.indexOf("4") != "-1") {
-                                    var re = "RuaRuaRuaRua~";
-                                    reply(re);
-                                } else {
-                                    var re = "Questions susceptibles de vous intéresser: <br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(1)\",600)>1.balabala1</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(2)\",600)>2.balabala2 </a><br><a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(3)\",600)>3.balabala3</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(4)\",600)>4.balabala4</a>";
-                                    reply(re);
-                                }
-
-                            }
-                        }
-                    }
-                });
-
-                //点发送按钮发送消息
-                $("#chat-fasong").click(function () {
-                    var ip = ip_client;
-                    var textContent = $("#msg_client").val();
-                    var time = timenow();
-                    if (online == '1') {
-                        send();
-                    } else if (online != '1') {
-                        repeatClientMsg(textContent);
-                        document.getElementById('msg_client').value = "";
-                        $.get('./chat_data.php?act=msg', {ip: ip, msg: textContent, time: time, others: "msg offline"});
-                        if (textContent != "") {
-                            //聊天框默认最底部
-                            $(document).ready(function () {
-                                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
-                            });
-                            document.getElementById('timenow').innerHTML = timenow();
-                            if (textContent.indexOf("balabala1") != "-1" || textContent.indexOf("1") != "-1") {
-                                var re = "<a href=\"#devis\">Rua~</a>";
-                                reply(re);
-                            } else if (textContent.indexOf("balabala2") != "-1" || textContent.indexOf("2") != "-1") {
-                                var re = "RuaRua~";
-                                reply(re);
-                            } else if (textContent.indexOf("balabala3") != "-1" || textContent.indexOf("3") != "-1") {
-                                var re = "RuaRuaRua~";
-                                reply(re);
-                            } else if (textContent.indexOf("balabala4") != "-1" || textContent.indexOf("4") != "-1") {
-                                var re = "RuaRuaRuaRua~";
-                                reply(re);
-                            } else {
-                                var re = "Questions susceptibles de vous intéresser: <br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(1)\",600)>1.balabala1</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(2)\",600)>2.balabala2 </a><br><a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(3)\",600)>3.balabala3</a><br> <a href=\"javascript:void(0);\" onclick=setTimeout(\"replyNum(4)\",600)>4.balabala4</a>";
-                                reply(re);
-                            }
-                        }
-                    }
-                });
-            } else {
-                alert('该浏览器不支持web socket');
+        const socket = $.websocket('ws://192.168.1.100:2000');
+        var myID;
+        socket.on('connect', function (user) {
+            myID = user;
+            console.log('my ID : ' + myID);
+            //$('.chatBox-Content-Demo').append(reply("Welcome " + user));
+        });
+        function send() {
+            var msg = $('#msg_client').val();
+            socket.emit('chat message', msg);
+            repeatClientMsg(msg);
+            $('#msg_client').val('');
+            return false;
+        }
+        $(window).keydown(function (evt) {
+            if (evt.keyCode == 13) {
+                send();
             }
         });
+        $('#chat-fasong').bind('click', function () {
+            send();
+        });
+        socket.on('chat message', function (msg) {
+            $('.chatBox-Content-Demo').append(reply(msg));
+        });
+
+
+        socket.listen();
     </script>   
     <!--客服人工回复部分结束-->
 
