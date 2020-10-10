@@ -549,15 +549,18 @@
         </svg>
     </div>
 
+
     <!--客服悬浮窗-->
-    <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
-        <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
-            <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
-        </div>
-        <div class="animated-circles">
-            <div class="circle c-1"></div>
-            <div class="circle c-2"></div>
-            <div class="circle c-3"></div>
+    <div id="chatpopup">
+        <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
+            <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
+                <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
+            </div>
+            <div class="animated-circles">
+                <div class="circle c-1"></div>
+                <div class="circle c-2"></div>
+                <div class="circle c-3"></div>
+            </div>
         </div>
     </div>
     <!--客服悬浮窗结束-->
@@ -590,7 +593,6 @@
         })(jQuery);
     </script>
     <!--客服悬浮窗JS结束-->
-
 
     <!--产品图弹窗介绍-->
     <div class="modal fade" id="product1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" style="display:none">
@@ -648,7 +650,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <!--                        <button type="submit" class="btn btn-primary">确定</button>-->
+                    <!--<button type="submit" class="btn btn-primary">确定</button>-->
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
@@ -728,8 +730,7 @@
                                 <i class="iconfont icon-biaoqing"></i>
                             </button>
                             <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
-                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
-                                       name="file" id="inputImage" class="hidden">
+                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png" name="file" id="inputImage" class="hidden">
                                 <i class="iconfont icon-tuxiang"></i>
                             </label>
                             <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i></button>
@@ -774,16 +775,6 @@
         </div>
     </div>
     <!-- 客服自动回复聊天框部分结束 -->
-
-    <!--socket.io-->
-<!--    <script src="js/chat.js"></script>
-    <script src="/socket.io/socket.io.js"></script>-->
-    <!--检测IP-->
-    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
-    <script type="text/javascript">
-                                    var ip_client = returnCitySN["cip"];
-    </script>
-
     <!--检测是否有人工在线-->
     <?php
     require 'conn_chat.php';
@@ -800,47 +791,27 @@
         echo '<script>console.log ("error");</script>';
     }
     ?>
+    <!--监测IP-->
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8">
+    </script>
+    <script>
+        var ip_client = returnCitySN["cip"];
+    </script>
+    <?php
+    $ip_extern = $_SERVER['REMOTE_ADDR'];
+    $ip_intern = gethostbyname($_ENV['COMPUTERNAME']);
+    ?>
 
     <!--客服人工回复-->
+    
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/socket.js"></script>
     <script src="js/chat.js">
-    </script>
-
-    <script>
-        const socket = $.websocket('ws://192.168.1.100:2000');
-        var myID;
-        socket.on('connect', function (user) {
-            myID = user;
-            console.log('my ID : ' + myID);
-            //$('.chatBox-Content-Demo').append(reply("Welcome " + user));
-        });
-        function send() {
-            var msg = $('#msg_client').val();
-            socket.emit('chat message', msg);
-            repeatClientMsg(msg);
-            $('#msg_client').val('');
-            return false;
-        }
-        $(window).keydown(function (evt) {
-            if (evt.keyCode == 13) {
-                send();
-            }
-        });
-        $('#chat-fasong').bind('click', function () {
-            send();
-        });
-        socket.on('chat message', function (msg) {
-            $('.chatBox-Content-Demo').append(reply(msg));
-        });
-
-
-        socket.listen();
-    </script>   
+    </script> 
     <!--客服人工回复部分结束-->
-
     <!--客服自动回复对话框JS部分-->
     <script>
+        var ip = "<?php echo $ip_intern;?>";
         function timenow() {
             var myDate = new Date();
             var times = myDate.toLocaleString( );
