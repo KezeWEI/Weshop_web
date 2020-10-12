@@ -792,18 +792,18 @@
     }
     ?>
     <!--监测IP-->
-    <script src="http://pv.sohu.com/cityjson?ie=utf-8">
-    </script>
-    <script>
-        var ip_client = returnCitySN["cip"];
-    </script>
     <?php
     $ip_extern = $_SERVER['REMOTE_ADDR'];
     $ip_intern = gethostbyname($_ENV['COMPUTERNAME']);
     ?>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8">
+    </script>
+    <script>
+        var ip_client = returnCitySN["cip"];
+        var ip_intern = "<?php echo $ip_intern; ?>"; 
+    </script>
 
     <!--客服人工回复-->
-    
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/socket.js"></script>
     <script src="js/chat.js">
@@ -811,7 +811,6 @@
     <!--客服人工回复部分结束-->
     <!--客服自动回复对话框JS部分-->
     <script>
-        var ip = "<?php echo $ip_intern;?>";
         function timenow() {
             var myDate = new Date();
             var times = myDate.toLocaleString( );
@@ -961,12 +960,8 @@
                 });
                 document.getElementById('timenow').innerHTML = timenow();
             };
-
             reader.readAsDataURL(pic.files[0]);
-
         }
-
-
     </script>
     <!--客服自动回复对话框JS部分结束-->
 
