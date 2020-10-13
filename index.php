@@ -707,7 +707,7 @@
                     <div class="chatBox-content">
                         <div class="chatBox-content-demo" id="chatBox-content-demo">
 
-                            <div class="clearfloat">
+<!--                            <div class="clearfloat">
                                 <div class="author-name">
                                     <small class="chat-date" id="systime">2020-9-4 15:33:33</small>
                                 </div>
@@ -717,7 +717,20 @@
                                         Bonjour, je peut vous aider?
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+<!--                            <div class="clearfloat">
+                                <div class="author-name">
+                                    <small class="chat-date" id="timenow"></small> 
+                                </div> 
+                                <div class="left">
+                                    <div class="chat-avatars">
+                                        <img src="static/icon01.png" alt="头像" />
+                                    </div>  
+                                    <div class="chat-message"> 
+                                        textContent  
+                                    </div> 
+                                </div> 
+                            </div>-->
 
                         </div>
                     </div>
@@ -778,8 +791,8 @@
     <!--检测是否有人工在线-->
     <?php
     require 'conn_chat.php';
-    $host = '192.168.1.100';
-    $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminList WHERE isOnline = 1");
+    $host = '192.168.0.11';
+    $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
         $online = 1;
@@ -800,7 +813,8 @@
     </script>
     <script>
         var ip_client = returnCitySN["cip"];
-        var ip_intern = "<?php echo $ip_intern; ?>"; 
+        var ip_intern = "<?php echo $ip_intern; ?>";
+        var online = "<?php echo $online; ?>";
     </script>
 
     <!--客服人工回复-->
