@@ -33,7 +33,7 @@ include_once "changeLang.php";
     <!--nav-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <img src="images/title.png" class="Accueil">
+            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"><?php echo $GLOBALS['L']['menu'] ?></span>
             </button>

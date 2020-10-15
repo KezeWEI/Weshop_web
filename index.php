@@ -33,7 +33,7 @@ include_once "changeLang.php";
     <!--导航栏-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <img src="images/title.png" class="Accueil">
+            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
@@ -533,7 +533,7 @@ include_once "changeLang.php";
         function changeLang() {
             if (localStorage.getItem("lang") != null) {
                 //有转换记录
-                // alert("检测成功,当前为:" + localStorage.getItem("lang"));
+                //alert("检测成功,当前为:" + localStorage.getItem("lang"));
                 //法语转中文
                 if (localStorage.getItem("lang") == "fr") {
                     var language = "zh";
@@ -562,7 +562,6 @@ include_once "changeLang.php";
                         },
                         success : function(msg){
                             location.replace(window.location.href);
-
                         }
                     });
                 }
