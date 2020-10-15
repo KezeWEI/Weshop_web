@@ -546,14 +546,14 @@ include_once "changeLang.php";
                             lang: 'zh',
                         },
                         success : function(msg){
-                            // location.replace(window.location.href);
+                            location.replace(window.location.href);
                         }
                     });
                     //中文转法语
                 } else {
                     var language = "fr";
                     localStorage.setItem("lang", language);
-                    alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
                     $.ajax({
                         url: 'changeLang.php',
                         type: 'post',
@@ -629,9 +629,9 @@ include_once "changeLang.php";
                         <h2 class="ftco-heading-2"><?php echo $GLOBALS['L']['footer_contact'] ?></h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
+                                <li><a><span class="icon icon-map-marker"></span><span class="text">8 avenue Henri Barbusse, 93000 Bobigny</span></a></li>
+                                <li><a><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12 88</span></a></li>
+                                <li><a><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
                             </ul>
                         </div>
                     </div>
