@@ -455,11 +455,11 @@ include_once "changeLang.php";
             //逻辑顺序：没有切语言之前，本地变量localStorage.getItem("lang")没有值，自动读取浏览器语言
             //一旦切换过一次语言，本地保存语言localStorage.getItem("lang")为zh或fr。
             //先看有没有过切换记录，没有就自动识别
-            if(localStorage.getItem("lang") =="zh"){
+            if (localStorage.getItem("lang") == "zh") {
                 var lang = "zh-CN";
-            }else if(localStorage.getItem("lang") =="fr"){
+            } else if (localStorage.getItem("lang") == "fr") {
                 var lang = "fr";
-            }else{
+            } else {
                 var lang = navigator.language;
             }
             if (lang == "zh-CN") {
@@ -545,7 +545,7 @@ include_once "changeLang.php";
                         data: {
                             lang: 'zh',
                         },
-                        success : function(msg){
+                        success: function(msg) {
                             location.replace(window.location.href);
                         }
                     });
@@ -560,7 +560,7 @@ include_once "changeLang.php";
                         data: {
                             lang: 'fr',
                         },
-                        success : function(msg){
+                        success: function(msg) {
                             location.replace(window.location.href);
                         }
                     });
@@ -1040,16 +1040,16 @@ include_once "changeLang.php";
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
-        $online = 1;
-        echo '<script>console.log ("client is online");</script>';
+        echo '<script>console.log ("server is online");</script>';
+        echo '<script>online = 1;</script>';
     } else if ($res[0] == 0) {
-        $online = 0;
-        echo '<script>console.log ("client is offline");</script>';
+        echo '<script>online = 0;</script>';
+        echo '<script>console.log ("server is offline");</script>';
     } else {
         echo '<script>console.log ("error");</script>';
     }
     ?>
-    <!--检测IP-->
+    <!--检测IP,这个可能会让网页运行变慢，考虑异步或者开启客服再访问！！！！！！！！！！！！！！！！-->
     <script src="http://pv.sohu.com/cityjson?ie=utf-8">
     </script>
     <script type="text/javascript">

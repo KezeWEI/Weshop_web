@@ -1,5 +1,4 @@
 const socket = $.websocket('ws://192.168.1.120:2000');
-//var username = ip_client;
 var username = ip_intern;
 
 /***
@@ -66,9 +65,9 @@ function AutoReply(type, msg) {
  ***/
 socket.on('connect', function (uid) {
     console.log('socket ID : ' + uid);
-    //var socketID = uid;
     console.log('IP : ' + username);
     socket.emit('add user', username);
+    alert("online:"+online);
     if (online == '1') {
         reply("Bonjour, est-ce que je peux vous aider ?");
     } else {
