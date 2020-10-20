@@ -33,7 +33,7 @@ include_once "changeLang.php";
     <!--导航栏-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
+            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
@@ -94,7 +94,7 @@ include_once "changeLang.php";
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon" class="icon"><img src="images/qrshop1.png" height="150" width="150"></div>
@@ -105,7 +105,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon" class="icon"><img src="images/qrshop2.png" height="150" width="150"></div>
@@ -116,7 +116,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon" class="icon"><img src="images/qrshop3.png" height="150" width="150"></div>
@@ -127,7 +127,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon"><img src="images/qrshop4.png" height="150" width="150"></div>
@@ -139,7 +139,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon"><img src="images/qrshop5.png" height="150" width="150"></div>
@@ -150,7 +150,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="col-md-4 col-12 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="d-flex justify-content-center">
                             <div class="icon"><img src="images/qrshop6.png" height="150" width="150"></div>
@@ -165,8 +165,8 @@ include_once "changeLang.php";
         </div>
         <div class="container-wrap mt-5">
             <div class="row d-flex no-gutters">
-                <div class="col-md-6 img ftco-animate" style="background-image: url(images/avantage.png)"></div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-6 col-0 img ftco-animate" style="background-image: url(images/avantage.png)"></div>
+                <div class="col-md-6 col-12 d-flex">
                     <div class="services-wrap">
                         <div class="heading-section mb-5 ftco-animate">
                             <h2 class="mb-2"><?php echo $GLOBALS['L']['qrshop_advantage'] ?></h2>
@@ -271,12 +271,10 @@ include_once "changeLang.php";
             <div class="row">
                 <div class="col-md-12 text-center">
 
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
+                    <p>Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> <?php echo $GLOBALS['L']['footer_right'] ?>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </script>
+                        <?php echo $GLOBALS['L']['footer_right'] ?>
                     </p>
                 </div>
             </div>
@@ -307,6 +305,7 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
+            watchChangeSize();
             if (localStorage.getItem("lang") == "zh") {
                 var lang = "zh-CN";
             } else if (localStorage.getItem("lang") == "fr") {
@@ -333,6 +332,39 @@ include_once "changeLang.php";
                 }
             })
         });
+
+        $(window).resize(function() {
+            var offsetWid = document.documentElement.clientWidth;
+            var offsetHei = document.documentElement.clientHeight;
+            if (offsetWid < 450) {
+                $("#imgLogo").css({
+                    "width": "60%",
+                    "height": "60%"
+                });
+                $("#aLogo").css({
+                    "width": offsetWid * 0.5
+                });
+                // $("#pricingTable1").css({"height":"50%"});
+            }
+        })
+
+        function watchChangeSize() {
+            //可视区的宽/高(DOM)
+            var offsetWid = document.documentElement.clientWidth;
+            var offsetHei = document.documentElement.clientHeight;
+            if (offsetWid < 450) {
+                $("#imgLogo").css({
+                    "width": "60%",
+                    "height": "60%"
+                });
+                $("#aLogo").css({
+                    "width": offsetWid * 0.5
+                });
+                $("#pricingTable1").css({
+                    "height": offsetHei * 0.5
+                });
+            }
+        }
 
         function changeLang() {
 

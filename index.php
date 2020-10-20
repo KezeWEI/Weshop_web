@@ -515,8 +515,6 @@ include_once "changeLang.php";
         //可视区的宽/高(DOM)
         var offsetWid = document.documentElement.clientWidth;
         var offsetHei = document.documentElement.clientHeight;
-        console.log(offsetWid);
-        console.log(offsetHei);
         if (offsetWid < 450) {
             $("#imgLogo").css({
                 "width": "60%",
