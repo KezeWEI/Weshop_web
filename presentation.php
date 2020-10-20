@@ -34,7 +34,7 @@ include_once "changeLang.php";
     <!--导航栏-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
+            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
@@ -68,12 +68,15 @@ include_once "changeLang.php";
             </div>
         </div>
     </div>
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+    <!--分割线-->
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);"
+        data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="row">
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <!-- bootstrap 4.0删除了col-xs（极小）,用col-*代替！ -->
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="2">0</strong>
@@ -81,7 +84,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="1500">0</strong>
@@ -89,7 +92,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="6">0</strong>
@@ -97,7 +100,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="3000">0</strong>
@@ -110,14 +113,15 @@ include_once "changeLang.php";
             </div>
         </div>
     </section>
+    <!--分割线部分结束-->
 
 
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation1.jpg);">
+                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation1.jpg);">
                 </div>
-                <div class="col-md-6 ftco-animate p-md-5">
+                <div class="col-md-6 col-12 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -141,8 +145,7 @@ include_once "changeLang.php";
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-
-                <div class="col-md-6 ftco-animate p-md-5">
+                <div class="col-md-6 col-12 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -160,7 +163,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation2.jpg);">
+                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation2.jpg);">
                 </div>
             </div>
         </div>
@@ -169,13 +172,12 @@ include_once "changeLang.php";
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation3.jpg);">
+                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation3.jpg);">
                 </div>
-                <div class="col-md-6 ftco-animate p-md-5">
+                <div class="col-md-6 col-12 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
                             </div>
                         </div>
                         <div class="col-md-12 d-flex align-items-center">
@@ -340,6 +342,7 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
+            watchChangeSize();
             if (localStorage.getItem("lang") == "zh") {
                 var lang = "zh-CN";
             } else if (localStorage.getItem("lang") == "fr") {
@@ -368,6 +371,38 @@ include_once "changeLang.php";
                 }
             })
         });
+
+        $(window).resize(function() {
+        var offsetWid = document.documentElement.clientWidth;
+        var offsetHei = document.documentElement.clientHeight;
+        if (offsetWid < 450) {
+            $("#imgLogo").css({
+                "width": "60%",
+                "height": "60%"
+            });
+            $("#aLogo").css({
+                "width": offsetWid * 0.5
+            });
+        }
+    })
+
+    function watchChangeSize() {
+        //可视区的宽/高(DOM)
+        var offsetWid = document.documentElement.clientWidth;
+        var offsetHei = document.documentElement.clientHeight;
+        if (offsetWid < 450) {
+            $("#imgLogo").css({
+                "width": "60%",
+                "height": "60%"
+            });
+            $("#aLogo").css({
+                "width": offsetWid * 0.5
+            });
+            $("#pricingTable1").css({
+                "height": offsetHei * 0.5
+            });
+        }
+    }
 
         function changeLang() {
             if (localStorage.getItem("lang") != null) {

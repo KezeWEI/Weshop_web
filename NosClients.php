@@ -33,7 +33,7 @@ include_once "changeLang.php";
     <!--nav-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
+            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"><?php echo $GLOBALS['L']['menu'] ?></span>
             </button>
@@ -274,7 +274,6 @@ include_once "changeLang.php";
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-
                     <p>
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
@@ -310,8 +309,9 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
+            watchChangeSize();
             if (localStorage.getItem("lang") == "zh") {
-                var lang = "zh-CN";
+                var lang = "zh";
             } else if (localStorage.getItem("lang") == "fr") {
                 var lang = "fr";
             } else {
@@ -376,6 +376,39 @@ include_once "changeLang.php";
                 }
             })
         });
+
+        $(window).resize(function() {
+        var offsetWid = document.documentElement.clientWidth;
+        var offsetHei = document.documentElement.clientHeight;
+        if (offsetWid < 450) {
+            $("#imgLogo").css({
+                "width": "60%",
+                "height": "60%"
+            });
+            $("#aLogo").css({
+                "width": offsetWid * 0.5
+            });
+            // $("#pricingTable1").css({"height":"50%"});
+        }
+    })
+
+    function watchChangeSize() {
+        //可视区的宽/高(DOM)
+        var offsetWid = document.documentElement.clientWidth;
+        var offsetHei = document.documentElement.clientHeight;
+        if (offsetWid < 450) {
+            $("#imgLogo").css({
+                "width": "60%",
+                "height": "60%"
+            });
+            $("#aLogo").css({
+                "width": offsetWid * 0.5
+            });
+            $("#pricingTable1").css({
+                "height": offsetHei * 0.5
+            });
+        }
+    }
 
         function changeLang() {
             if (localStorage.getItem("lang") != null) {
