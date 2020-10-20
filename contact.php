@@ -568,7 +568,7 @@ include_once "changeLang.php";
     <!--检测是否有人工在线-->
     <?php
     require 'conn.php';
-    $host = '192.168.1.120';
+    $host = '192.168.1.153';
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
@@ -581,24 +581,64 @@ include_once "changeLang.php";
         echo '<script>console.log ("error");</script>';
     }
     ?>
-    <!--监测IP-->
-    <?php
-    $ip_extern = $_SERVER['REMOTE_ADDR'];
-    $ip_intern = gethostbyname($_ENV['COMPUTERNAME']);
-    ?>
+    <!--检测IP-->
     <script src="http://pv.sohu.com/cityjson?ie=utf-8">
     </script>
-    <script>
+    <script type="text/javascript">
+        //console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
         var ip_client = returnCitySN["cip"];
-        var ip_intern = "<?php echo $ip_intern; ?>";
+    </script>
+    <!--另一种通过php检测ip的方法-->
+    <?php
+    require_once 'IP.php';
+    ?>
+    <script>
+        var ip_local = "<?php echo $ip_local; ?>";
         var online = "<?php echo $online; ?>";
     </script>
 
     <!--客服人工回复-->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/socket.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="js/home.chat.io.js">
+    </script>
     <!--客服人工回复部分结束-->
+    <script>
+//        $(window).unload(function () {
+//            window.alert("获取到了页面要关闭的事件了！");
+//        });
+//        $(window).bind('beforeunload', function () {
+//            window.alert("hehe");
+//            console.log("hehe???");
+//            //socket.emit("client onload", "...");
+//        });
+        //$(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以下是历史消息</small></div>");
+<?php
+require 'reload_chat_history.php';
+
+foreach ($arrs as $arr) {
+//print_r ($arr);
+//echo '<br>';
+    if ($arr['others'] == 'reply') {
+        //echo '<script>reply ("' + $msg + '");</script>'; <= ne marche pas
+        ?>
+
+                reply("<? echo $arr['msg']; ?>");
+
+    <?php } else { ?>
+
+                repeatClientMsg("<? echo $arr['msg']; ?>");
+
+        <?php
+    }
+}
+?>
+
+        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以上是历史消息</small></div>");
+        $(document).ready(function () {
+            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        });
+    </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
