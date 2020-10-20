@@ -50,14 +50,14 @@ include_once "changeLang.php";
                             class="nav-link"><?php echo $GLOBALS['L']['menu_product'] ?></a></li>
                     <li class="nav-item"><a class="nav-link"
                             href="QRShop.php"><?php echo $GLOBALS['L']['menu_qrshop'] ?></a></li>
-                    <li class="nav-item"><a href="NosClients.php"
+                    <li class="nav-item" style="white-space:nowrap;"><a href="NosClients.php"
                             class="nav-link"><?php echo $GLOBALS['L']['menu_customer'] ?></a></li>
                     <li class="nav-item"><a href="contact.php"
                             class="nav-link"><?php echo $GLOBALS['L']['menu_contact'] ?></a></li>
                     <li class="nav-item cta"><a href="#devis" class="nav-link" data-toggle="modal"
                             data-target="#modalRequest"><?php echo $GLOBALS['L']['menu_budget'] ?></a></li>
                     &nbsp; &nbsp; &nbsp; &nbsp;
-                    <li class="nav-item cta"><a class="nav-link" href="javascript:void(0);"
+                    <li class="nav-item cta" style="white-space:nowrap;"><a class="nav-link" href="javascript:void(0);"
                             onclick="changeLang()">中文/Fr</a></li>
                 </ul>
             </div>
