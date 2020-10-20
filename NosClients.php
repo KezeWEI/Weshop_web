@@ -318,7 +318,6 @@ include_once "changeLang.php";
                 var lang = navigator.language;
             }
             if (lang == 'zh') {
-                alert(1);
                 $.ajax({
                     url: 'changeData.php',
                     type: 'post',
@@ -338,7 +337,6 @@ include_once "changeLang.php";
                     }
                 })
             } else {
-                alert(2);
                 $.ajax({
                     url: 'changeData.php',
                     type: 'post',
