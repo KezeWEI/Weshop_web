@@ -340,13 +340,13 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
-          if(localStorage.getItem("lang") =="zh"){
-              var lang = "zh-CN";
-          }else if(localStorage.getItem("lang") =="fr"){
-              var lang = "fr";
-          }else{
-              var lang = navigator.language;
-          }
+            if (localStorage.getItem("lang") == "zh") {
+                var lang = "zh-CN";
+            } else if (localStorage.getItem("lang") == "fr") {
+                var lang = "fr";
+            } else {
+                var lang = navigator.language;
+            }
             $.ajax({
                 url: 'changeData.php',
                 type: 'post',
@@ -370,55 +370,55 @@ include_once "changeLang.php";
         });
 
         function changeLang() {
-                    if (localStorage.getItem("lang") != null) {
-                        //有转换记录
-                        // alert("检测成功,当前为:" + localStorage.getItem("lang"));
-                        //法语转中文
-                        if (localStorage.getItem("lang") == "fr") {
-                            var language = "zh";
-                            localStorage.setItem("lang", language);
-                            // alert("转换成功，转换为：" + localStorage.getItem("lang"));
-                            $.ajax({
-                                url: 'changeLang.php',
-                                type: 'post',
-                                data: {
-                                    lang: 'zh',
-                                },
-                                success : function(msg){
-                                    location.reload();
-                                }
-                            });
-                            //中文转法语
-                        } else {
-                            var language = "fr";
-                            localStorage.setItem("lang", language);
-                            //alert("转换成功，转换为：" + localStorage.getItem("lang"));
-                            $.ajax({
-                                url: 'changeLang.php',
-                                type: 'post',
-                                data: {
-                                    lang: 'fr',
-                                },
-                                success : function(msg){
-                                    location.reload();
-        
-                                }
-                            });
+            if (localStorage.getItem("lang") != null) {
+                //有转换记录
+                // alert("检测成功,当前为:" + localStorage.getItem("lang"));
+                //法语转中文
+                if (localStorage.getItem("lang") == "fr") {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'zh',
+                        },
+                        success: function(msg) {
+                            location.reload();
                         }
-                    } else {
-                        //第一次转换
-                        // alert("未检测到");
-                        var lang = navigator.language;
-                        //已经是中文页面，转换语言显示法语
-                        if (lang == "zh-CN") {
-                            var language = "fr";
-                            localStorage.setItem("lang", language);
-                        } else {
-                            var language = "zh";
-                            localStorage.setItem("lang", language);
+                    });
+                    //中文转法语
+                } else {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                    //alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'fr',
+                        },
+                        success: function(msg) {
+                            location.reload();
+
                         }
-                    }
+                    });
                 }
+            } else {
+                //第一次转换
+                // alert("未检测到");
+                var lang = navigator.language;
+                //已经是中文页面，转换语言显示法语
+                if (lang == "zh-CN") {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                } else {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                }
+            }
+        }
         (function($) {
             setInterval(function() {
                 if ($(".animated-circles").hasClass("animated")) {

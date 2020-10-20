@@ -140,4 +140,3 @@
     );
     // $data = json_encode($lang);
     // echo $data;
-?>

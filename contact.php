@@ -214,13 +214,13 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
-          if(localStorage.getItem("lang") =="zh"){
-              var lang = "zh-CN";
-          }else if(localStorage.getItem("lang") =="fr"){
-              var lang = "fr";
-          }else{
-              var lang = navigator.language;
-          }
+            if (localStorage.getItem("lang") == "zh") {
+                var lang = "zh-CN";
+            } else if (localStorage.getItem("lang") == "fr") {
+                var lang = "fr";
+            } else {
+                var lang = navigator.language;
+            }
             $.ajax({
                 url: 'changeData.php',
                 type: 'post',
@@ -256,7 +256,7 @@ include_once "changeLang.php";
                         data: {
                             lang: 'zh',
                         },
-                        success : function(msg){
+                        success: function(msg) {
                             location.reload();
                         }
                     });
@@ -271,7 +271,7 @@ include_once "changeLang.php";
                         data: {
                             lang: 'fr',
                         },
-                        success : function(msg){
+                        success: function(msg) {
                             location.reload();
                         }
                     });

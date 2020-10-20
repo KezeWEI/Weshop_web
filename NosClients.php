@@ -34,30 +34,21 @@ include_once "changeLang.php";
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a href="index.php"><img src="images/title.png" class="Accueil"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"><?php echo $GLOBALS['L']['menu'] ?></span>
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.php"
-                            class="nav-link"><?php echo $GLOBALS['L']['menu_index'] ?></a></li>
-                    <li class="nav-item"><a href="presentation.php"
-                            class="nav-link"><?php echo $GLOBALS['L']['menu_presentation'] ?></a></li>
-                    <li class="nav-item"><a href="produits.php"
-                            class="nav-link"><?php echo $GLOBALS['L']['menu_product'] ?></a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="QRShop.php"><?php echo $GLOBALS['L']['menu_qrshop'] ?></a></li>
-                    <li class="nav-item active"><a href="NosClients.php"
-                            class="nav-link"><?php echo $GLOBALS['L']['menu_customer'] ?></a></li>
-                    <li class="nav-item"><a href="contact.php"
-                            class="nav-link"><?php echo $GLOBALS['L']['menu_contact'] ?></a></li>
-                    <li class="nav-item cta"><a href="index.php#devis"
-                            class="nav-link"><span><?php echo $GLOBALS['L']['menu_budget'] ?></span></a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link"><?php echo $GLOBALS['L']['menu_index'] ?></a></li>
+                    <li class="nav-item"><a href="presentation.php" class="nav-link"><?php echo $GLOBALS['L']['menu_presentation'] ?></a></li>
+                    <li class="nav-item"><a href="produits.php" class="nav-link"><?php echo $GLOBALS['L']['menu_product'] ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="QRShop.php"><?php echo $GLOBALS['L']['menu_qrshop'] ?></a></li>
+                    <li class="nav-item active"><a href="NosClients.php" class="nav-link"><?php echo $GLOBALS['L']['menu_customer'] ?></a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link"><?php echo $GLOBALS['L']['menu_contact'] ?></a></li>
+                    <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span><?php echo $GLOBALS['L']['menu_budget'] ?></span></a></li>
                     &nbsp; &nbsp; &nbsp; &nbsp;
-                    <li class="nav-item cta"><a class="nav-link" href="javascript:void(0);"
-                            onclick="changeLang()">中文/Fr</a></li>
+                    <li class="nav-item cta"><a class="nav-link" href="javascript:void(0);" onclick="changeLang()">中文/Fr</a></li>
                 </ul>
             </div>
 
@@ -65,12 +56,10 @@ include_once "changeLang.php";
     </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-wrap-2" style="background-image: url(images/bg_2.jpg);"
-        data-stellar-background-ratio="0.5">
+    <div class="hero-wrap hero-wrap-2" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container-fluid">
-            <div class="row no-gutters d-flex slider-text align-items-center justify-content-center"
-                data-scrollax-parent="true">
+            <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
                 <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
 
                     <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
@@ -239,8 +228,7 @@ include_once "changeLang.php";
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2"><?php echo $GLOBALS['L']['footer_article'] ?></h2>
                         <div class="block-21 mb-4 d-flex">
-                            <a id="tweet1_img" class="blog-img mr-4"
-                                style="background-image: url(images/image_1.jpg);"></a>
+                            <a id="tweet1_img" class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                             <div class="text">
                                 <h3 class="heading"><a id="tweet1_title" href="#">Even the all-powerful Pointing has no
                                         control about</a></h3>
@@ -254,8 +242,7 @@ include_once "changeLang.php";
                             </div>
                         </div>
                         <div class="block-21 mb-4 d-flex">
-                            <a id="tweet2_img" class="blog-img mr-4"
-                                style="background-image: url(images/image_2.jpg);"></a>
+                            <a id="tweet2_img" class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
                             <div class="text">
                                 <h3 class="heading"><a id="tweet2_title" href="#">Even the all-powerful Pointing has no
                                         control about</a></h3>
@@ -279,8 +266,7 @@ include_once "changeLang.php";
                                             Barbusse, 93000 Bobigny</span></a></li>
                                 <li><a><span class="icon icon-phone"></span><span class="text">+33 1 48 46 12
                                             88</span></a></li>
-                                <li><a><span class="icon icon-envelope"></span><span
-                                            class="text">contact@weshop.fr</span></a></li>
+                                <li><a><span class="icon icon-envelope"></span><span class="text">contact@weshop.fr</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -291,7 +277,7 @@ include_once "changeLang.php";
 
                     <p>
                         Copyright &copy;<script>
-                        document.write(new Date().getFullYear());
+                            document.write(new Date().getFullYear());
                         </script> <?php echo $GLOBALS['L']['footer_right'] ?>
                 </div>
             </div>
@@ -303,16 +289,14 @@ include_once "changeLang.php";
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg></div>
 
 
 
     <!--客服悬浮窗-->
     <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
-        <div
-            class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
+        <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
             <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
         </div>
         <div class="animated-circles">
@@ -325,147 +309,147 @@ include_once "changeLang.php";
 
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
-    $(function() {
-        if (localStorage.getItem("lang") == "zh") {
-            var lang = "zh-CN";
-        } else if (localStorage.getItem("lang") == "fr") {
-            var lang = "fr";
-        } else {
-            var lang = navigator.language;
-        }
-        if (lang == 'zh') {
+        $(function() {
+            if (localStorage.getItem("lang") == "zh") {
+                var lang = "zh-CN";
+            } else if (localStorage.getItem("lang") == "fr") {
+                var lang = "fr";
+            } else {
+                var lang = navigator.language;
+            }
+            if (lang == 'zh') {
+                $.ajax({
+                    url: 'changeData.php',
+                    type: 'post',
+                    data: {
+                        table: 'clientlistCn',
+                        sql: 'SELECT * FROM clientList'
+                    }
+                }).done(function(msg) {
+                    var data_obj = eval(msg);
+                    for (var i = 0; i < 8; i++) {
+                        var clientNum = i + 1;
+                        $("#client" + clientNum + "Company").text(data_obj[i].societe);
+                        $("#client" + clientNum + "Description").html(data_obj[i].description);
+                        $("#client" + clientNum + "Address").html(data_obj[i].address);
+                        $("#client" + clientNum + "Image").css('background-image', 'url(' + data_obj[i]
+                            .imageUrl + ')')
+                    }
+                })
+            } else {
+                $.ajax({
+                    url: 'changeData.php',
+                    type: 'post',
+                    data: {
+                        table: 'clientlist',
+                        sql: 'SELECT * FROM clientList'
+                    }
+                }).done(function(msg) {
+                    var data_obj = eval(msg);
+                    for (var i = 0; i < 8; i++) {
+                        var clientNum = i + 1;
+                        $("#client" + clientNum + "Company").text(data_obj[i].societe);
+                        $("#client" + clientNum + "Description").html(data_obj[i].description);
+                        $("#client" + clientNum + "Address").html(data_obj[i].address);
+                        $("#client" + clientNum + "Image").css('background-image', 'url(' + data_obj[i]
+                            .imageUrl + ')')
+                    }
+                })
+            }
             $.ajax({
                 url: 'changeData.php',
                 type: 'post',
                 data: {
-                    table: 'clientlistCn',
-                    sql: 'SELECT * FROM clientList'
+                    table: 'wechatlist',
+                    sql: 'SELECT * FROM wechatList;'
                 }
             }).done(function(msg) {
                 var data_obj = eval(msg);
-                for (var i = 0; i < 8; i++) {
-                    var clientNum = i + 1;
-                    $("#client" + clientNum + "Company").text(data_obj[i].societe);
-                    $("#client" + clientNum + "Description").html(data_obj[i].description);
-                    $("#client" + clientNum + "Address").html(data_obj[i].address);
-                    $("#client" + clientNum + "Image").css('background-image', 'url(' + data_obj[i]
-                        .imageUrl + ')')
+                for (var i = 0; i < 2; i++) {
+                    var pruductNum = i + 1;
+                    $("#tweet" + pruductNum + "_title").text(data_obj[i].title);
+                    $("#tweet" + pruductNum + "_title").attr("href", data_obj[i].url);
+                    $("#tweet" + pruductNum + "_url").attr("href", data_obj[i].url);
+                    $("#tweet" + pruductNum + "_date").text(data_obj[i].reg_time);
+                    document.getElementById("tweet" + pruductNum + "_img").style.backgroundImage = "url('" +
+                        data_obj[i].imageUrl + "')";
                 }
             })
-        } else {
-            $.ajax({
-                url: 'changeData.php',
-                type: 'post',
-                data: {
-                    table: 'clientlist',
-                    sql: 'SELECT * FROM clientList'
-                }
-            }).done(function(msg) {
-                var data_obj = eval(msg);
-                for (var i = 0; i < 8; i++) {
-                    var clientNum = i + 1;
-                    $("#client" + clientNum + "Company").text(data_obj[i].societe);
-                    $("#client" + clientNum + "Description").html(data_obj[i].description);
-                    $("#client" + clientNum + "Address").html(data_obj[i].address);
-                    $("#client" + clientNum + "Image").css('background-image', 'url(' + data_obj[i]
-                        .imageUrl + ')')
-                }
-            })
-        }
-        $.ajax({
-            url: 'changeData.php',
-            type: 'post',
-            data: {
-                table: 'wechatlist',
-                sql: 'SELECT * FROM wechatList;'
-            }
-        }).done(function(msg) {
-            var data_obj = eval(msg);
-            for (var i = 0; i < 2; i++) {
-                var pruductNum = i + 1;
-                $("#tweet" + pruductNum + "_title").text(data_obj[i].title);
-                $("#tweet" + pruductNum + "_title").attr("href", data_obj[i].url);
-                $("#tweet" + pruductNum + "_url").attr("href", data_obj[i].url);
-                $("#tweet" + pruductNum + "_date").text(data_obj[i].reg_time);
-                document.getElementById("tweet" + pruductNum + "_img").style.backgroundImage = "url('" +
-                    data_obj[i].imageUrl + "')";
-            }
-        })
-    });
-
-    function changeLang() {
-        if (localStorage.getItem("lang") != null) {
-            //有转换记录
-            //alert("检测成功,当前为:" + localStorage.getItem("lang"));
-            //法语转中文
-            if (localStorage.getItem("lang") == "fr") {
-                var language = "zh";
-                localStorage.setItem("lang", language);
-                // alert("转换成功，转换为：" + localStorage.getItem("lang"));
-                $.ajax({
-                    url: 'changeLang.php',
-                    type: 'post',
-                    data: {
-                        lang: 'zh',
-                    },
-                    success: function(msg) {
-                        location.reload();
-                    }
-                });
-                //中文转法语
-            } else {
-                var language = "fr";
-                localStorage.setItem("lang", language);
-                // alert("转换成功，转换为：" + localStorage.getItem("lang"));
-                $.ajax({
-                    url: 'changeLang.php',
-                    type: 'post',
-                    data: {
-                        lang: 'fr',
-                    },
-                    success: function(msg) {
-                        location.reload();
-                    }
-                });
-            }
-        } else {
-            //第一次转换
-            // alert("未检测到");
-            var lang = navigator.language;
-            //已经是中文页面，转换语言显示法语
-            if (lang == "zh-CN") {
-                var language = "fr";
-                localStorage.setItem("lang", language);
-            } else {
-                var language = "zh";
-                localStorage.setItem("lang", language);
-            }
-        }
-    }
-    (function($) {
-        setInterval(function() {
-            if ($(".animated-circles").hasClass("animated")) {
-                $(".animated-circles").removeClass("animated");
-            } else {
-                $(".animated-circles").addClass('animated');
-            }
-        }, 3000);
-        var wait = setInterval(function() {
-            $(".livechat-hint").removeClass("show_hint").addClass("hide_hint");
-            clearInterval(wait);
-        }, 4500);
-        $(".livechat-girl").hover(function() {
-            clearInterval(wait);
-            $(".livechat-hint").removeClass("hide_hint").addClass("show_hint");
-        }, function() {
-            $(".livechat-hint").removeClass("show_hint").addClass("hide_hint");
-        }).click(function() {
-            $(".chatBox").toggle(100);
-            $(".chatBox-head-two").toggle();
-            $(".chatBox-kuang").fadeToggle();
-            $(".livechat-girl").css("display", "none");
         });
-    })(jQuery);
+
+        function changeLang() {
+            if (localStorage.getItem("lang") != null) {
+                //有转换记录
+                //alert("检测成功,当前为:" + localStorage.getItem("lang"));
+                //法语转中文
+                if (localStorage.getItem("lang") == "fr") {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'zh',
+                        },
+                        success: function(msg) {
+                            location.reload();
+                        }
+                    });
+                    //中文转法语
+                } else {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'fr',
+                        },
+                        success: function(msg) {
+                            location.reload();
+                        }
+                    });
+                }
+            } else {
+                //第一次转换
+                // alert("未检测到");
+                var lang = navigator.language;
+                //已经是中文页面，转换语言显示法语
+                if (lang == "zh-CN") {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                } else {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                }
+            }
+        }
+        (function($) {
+            setInterval(function() {
+                if ($(".animated-circles").hasClass("animated")) {
+                    $(".animated-circles").removeClass("animated");
+                } else {
+                    $(".animated-circles").addClass('animated');
+                }
+            }, 3000);
+            var wait = setInterval(function() {
+                $(".livechat-hint").removeClass("show_hint").addClass("hide_hint");
+                clearInterval(wait);
+            }, 4500);
+            $(".livechat-girl").hover(function() {
+                clearInterval(wait);
+                $(".livechat-hint").removeClass("hide_hint").addClass("show_hint");
+            }, function() {
+                $(".livechat-hint").removeClass("show_hint").addClass("hide_hint");
+            }).click(function() {
+                $(".chatBox").toggle(100);
+                $(".chatBox-head-two").toggle();
+                $(".chatBox-kuang").fadeToggle();
+                $(".livechat-girl").css("display", "none");
+            });
+        })(jQuery);
     </script>
     <!--客服悬浮窗JS结束-->
 
@@ -511,12 +495,10 @@ include_once "changeLang.php";
                                 <i class="iconfont icon-biaoqing"></i>
                             </button>
                             <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
-                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
-                                    name="file" id="inputImage" class="hidden">
+                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png" name="file" id="inputImage" class="hidden">
                                 <i class="iconfont icon-tuxiang"></i>
                             </label>
-                            <button id="chat-fasong" class="btn-default-styles"><i
-                                    class="iconfont icon-fasong"></i></button>
+                            <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i></button>
                         </div>
                         <div class="biaoqing-photo">
                             <ul>
@@ -591,162 +573,162 @@ include_once "changeLang.php";
 
     <!--客服对话框JS部分-->
     <script>
-    function timenow() {
-        var myDate = new Date();
-        var times = myDate.toLocaleString();
-        return times
-    }
-
-    document.getElementById('systime').innerHTML = timenow();
-    screenFuc();
-
-    function screenFuc() {
-        var topHeight = $(".chatBox-head").innerHeight(); //聊天头部高度
-        //屏幕小于768px时候,布局change
-        var winWidth = $(window).innerWidth();
-        if (winWidth <= 768) {
-            var totalHeight = $(window).height(); //页面整体高度
-            //中间内容高度
-            $(".chatBox-info").css("height", totalHeight - topHeight);
-            $(".chatBox-content-demo").css("height", totalHeight - topHeight - 55);
-            // $(".chatBox-list").css("height", totalHeight - topHeight-200);
-            $(".chatBox-kuang").css("height", totalHeight - topHeight);
-            $(".div-textarea").css("width", winWidth - 106);
-        } else {
-            $(".chatBox-info").css("height", 495);
-            $(".chatBox-content").css("height", 448);
-            $(".chatBox-content-demo").css("height", 448);
-            $(".chatBox-list").css("height", 495);
-            $(".chatBox-kuang").css("height", 495);
-            // !import不可覆盖，以删除
-            $(".div-textarea").css("width", 245);
+        function timenow() {
+            var myDate = new Date();
+            var times = myDate.toLocaleString();
+            return times
         }
-    }
-    (window.onresize = function() {
+
+        document.getElementById('systime').innerHTML = timenow();
         screenFuc();
-    })();
-    //未读信息数量为空时
-    var totalNum = $(".chat-message-num").html();
-    if (totalNum == "") {
-        $(".chat-message-num").css("padding", 0);
-    }
-    $(".message-num").each(function() {
-        var wdNum = $(this).html();
-        if (wdNum == "") {
-            $(this).css("padding", 0);
+
+        function screenFuc() {
+            var topHeight = $(".chatBox-head").innerHeight(); //聊天头部高度
+            //屏幕小于768px时候,布局change
+            var winWidth = $(window).innerWidth();
+            if (winWidth <= 768) {
+                var totalHeight = $(window).height(); //页面整体高度
+                //中间内容高度
+                $(".chatBox-info").css("height", totalHeight - topHeight);
+                $(".chatBox-content-demo").css("height", totalHeight - topHeight - 55);
+                // $(".chatBox-list").css("height", totalHeight - topHeight-200);
+                $(".chatBox-kuang").css("height", totalHeight - topHeight);
+                $(".div-textarea").css("width", winWidth - 106);
+            } else {
+                $(".chatBox-info").css("height", 495);
+                $(".chatBox-content").css("height", 448);
+                $(".chatBox-content-demo").css("height", 448);
+                $(".chatBox-list").css("height", 495);
+                $(".chatBox-kuang").css("height", 495);
+                // !import不可覆盖，以删除
+                $(".div-textarea").css("width", 245);
+            }
         }
-    });
-
-
-    $(".chat-close").click(function() {
-        $(".chatBox").toggle(100);
-        $(".chatBox-head-two").toggle();
-        $(".chatBox-kuang").fadeToggle();
-        $(".livechat-girl").css("display", "block");
-    })
-
-
-    // changer
-    function repeatClientMsg(ques) {
-        if (ques != "") {
-            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
-                "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
-                "<div class=\"right\"> <div class=\"chat-message\"> " + ques + " </div> " +
-                "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>");
+        (window.onresize = function() {
+            screenFuc();
+        })();
+        //未读信息数量为空时
+        var totalNum = $(".chat-message-num").html();
+        if (totalNum == "") {
+            $(".chat-message-num").css("padding", 0);
         }
-        $(document).ready(function() {
-            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        $(".message-num").each(function() {
+            var wdNum = $(this).html();
+            if (wdNum == "") {
+                $(this).css("padding", 0);
+            }
         });
-    }
-
-    //changer
-    function replyNum(num) {
-        if (num == 1) {
-            repeatClientMsg("balabala1");
-            var re = "1.我们是冠军！";
-            reply(re);
-        } else if (num == 2) {
-            repeatClientMsg("balabala2");
-            var re = "2.我们是冠军！我们是冠军！";
-            reply(re);
-        } else if (num == 3) {
-            repeatClientMsg("balabala3");
-            var re = "3.我们是冠军！我们是冠军！我们是冠军！";
-            reply(re);
-        } else if (num == 4) {
-            repeatClientMsg("balabala4");
-            var re = "4.我们是冠军！我们是冠军！我们是冠军！我们是冠军！";
-            reply(re);
-        }
-    }
 
 
-    //      发送表情
-    $("#chat-biaoqing").click(function() {
-        $(".biaoqing-photo").toggle();
-    });
-    $(document).click(function() {
-        $(".biaoqing-photo").css("display", "none");
-    });
-    $("#chat-biaoqing").click(function(event) {
-        event.stopPropagation(); //阻止事件
-    });
-
-    $(".emoji-picker-image").each(function() {
-        $(this).click(function() {
-            var bq = $(this).parent().html();
-            console.log(bq)
-            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
-                "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
-                "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
-                "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>"
-                );
-            //发送后关闭表情框
-            $(".biaoqing-photo").toggle();
-            //聊天框默认最底部
-            $(document).ready(function() {
-                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0]
-                .scrollHeight);
-            });
-            document.getElementById('timenow').innerHTML = timenow();
+        $(".chat-close").click(function() {
+            $(".chatBox").toggle(100);
+            $(".chatBox-head-two").toggle();
+            $(".chatBox-kuang").fadeToggle();
+            $(".livechat-girl").css("display", "block");
         })
-    });
-    //自动回复
-    function reply(textContent) {
-        if (textContent != "") {
-            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
-                "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
-                "<div class=\"left\"><div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div>  " +
-                "<div class=\"chat-message\"> " + textContent + " </div> </div> </div>");
-            //聊天框默认最底部
+
+
+        // changer
+        function repeatClientMsg(ques) {
+            if (ques != "") {
+                $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                    "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
+                    "<div class=\"right\"> <div class=\"chat-message\"> " + ques + " </div> " +
+                    "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>");
+            }
             $(document).ready(function() {
                 $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
             });
-            document.getElementById('timenow').innerHTML = timenow();
         }
-    }
-    //      发送图片
-    function selectImg(pic) {
-        if (!pic.files || !pic.files[0]) {
-            return;
+
+        //changer
+        function replyNum(num) {
+            if (num == 1) {
+                repeatClientMsg("balabala1");
+                var re = "1.我们是冠军！";
+                reply(re);
+            } else if (num == 2) {
+                repeatClientMsg("balabala2");
+                var re = "2.我们是冠军！我们是冠军！";
+                reply(re);
+            } else if (num == 3) {
+                repeatClientMsg("balabala3");
+                var re = "3.我们是冠军！我们是冠军！我们是冠军！";
+                reply(re);
+            } else if (num == 4) {
+                repeatClientMsg("balabala4");
+                var re = "4.我们是冠军！我们是冠军！我们是冠军！我们是冠军！";
+                reply(re);
+            }
         }
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-            var images = evt.target.result;
-            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
-                "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
-                "<div class=\"right\"> <div class=\"chat-message\"><img src=" + images + "></div> " +
-                "<div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div> </div> </div>");
-            //聊天框默认最底部
-            $(document).ready(function() {
-                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
-            });
-            document.getElementById('timenow').innerHTML = timenow();
-        };
 
-        reader.readAsDataURL(pic.files[0]);
 
-    }
+        //      发送表情
+        $("#chat-biaoqing").click(function() {
+            $(".biaoqing-photo").toggle();
+        });
+        $(document).click(function() {
+            $(".biaoqing-photo").css("display", "none");
+        });
+        $("#chat-biaoqing").click(function(event) {
+            event.stopPropagation(); //阻止事件
+        });
+
+        $(".emoji-picker-image").each(function() {
+            $(this).click(function() {
+                var bq = $(this).parent().html();
+                console.log(bq)
+                $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                    "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
+                    "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
+                    "<div class=\"chat-avatars\"><img src=\"static/icon00.png\" alt=\"头像\" /></div> </div> </div>"
+                );
+                //发送后关闭表情框
+                $(".biaoqing-photo").toggle();
+                //聊天框默认最底部
+                $(document).ready(function() {
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0]
+                        .scrollHeight);
+                });
+                document.getElementById('timenow').innerHTML = timenow();
+            })
+        });
+        //自动回复
+        function reply(textContent) {
+            if (textContent != "") {
+                $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                    "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
+                    "<div class=\"left\"><div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div>  " +
+                    "<div class=\"chat-message\"> " + textContent + " </div> </div> </div>");
+                //聊天框默认最底部
+                $(document).ready(function() {
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                });
+                document.getElementById('timenow').innerHTML = timenow();
+            }
+        }
+        //      发送图片
+        function selectImg(pic) {
+            if (!pic.files || !pic.files[0]) {
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                var images = evt.target.result;
+                $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                    "<div class=\"author-name\"><small class=\"chat-date\" id=\"timenow\"></small> </div> " +
+                    "<div class=\"right\"> <div class=\"chat-message\"><img src=" + images + "></div> " +
+                    "<div class=\"chat-avatars\"><img src=\"static/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+                //聊天框默认最底部
+                $(document).ready(function() {
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                });
+                document.getElementById('timenow').innerHTML = timenow();
+            };
+
+            reader.readAsDataURL(pic.files[0]);
+
+        }
     </script>
     <!--客服对话框JS部分结束-->
 
@@ -774,9 +756,9 @@ include_once "changeLang.php";
     <script src="http://pv.sohu.com/cityjson?ie=utf-8">
     </script>
     <script>
-    var ip_client = returnCitySN["cip"];
-    var ip_intern = "<?php echo $ip_intern; ?>";
-    var online = "<?php echo $online; ?>";
+        var ip_client = returnCitySN["cip"];
+        var ip_intern = "<?php echo $ip_intern; ?>";
+        var online = "<?php echo $online; ?>";
     </script>
 
     <!--客服人工回复-->

@@ -37,4 +37,3 @@ switch ($act) {
         }
         break;
 }
-?>

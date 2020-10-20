@@ -52,4 +52,3 @@
     $mail->Subject = ("Nouveau Devis");
     $mail->Body = $body;
     $mail->send();
-?>

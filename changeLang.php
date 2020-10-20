@@ -31,4 +31,3 @@ if (isset($_SESSION['lang'])) {
         $GLOBALS['L'] = $lan;
     }
 }
-?>
