@@ -269,7 +269,7 @@ include_once "changeLang.php";
                 <!-- 设置空的target阻止默认提交表单以后刷新 -->
                 <form id="formDevis" class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
                     <div class="colForm col-lg-4 col-md-6 col-sm-12 col-12">
-                        <div class="pricing-table">
+                        <div id="pricingTable1" class="pricing-table">
                             <h3><?php echo $GLOBALS['L']['main_product'] ?></h3>
                             <HR>
                             <div class="form-group">
@@ -282,7 +282,6 @@ include_once "changeLang.php";
                                 <HR>
                                 <input type="radio" id="radio3" name="radio" value="Logiciel">
                                 <label class="circle" for="radio3"> <?php echo $GLOBALS['L']['main_product_software'] ?></label>
-                                <HR>
                             </div>
                         </div>
                         </br>
@@ -454,9 +453,11 @@ include_once "changeLang.php";
                 
         $(window).resize(function(){
             var offsetWid = document.documentElement.clientWidth;
-            if(offsetWid<400){
+            var offsetHei = document.documentElement.clientHeight;
+            if(offsetWid<450){
                 $("#imgLogo").css({"width":"60%","height":"60%"});
                 $("#aLogo").css({"width":offsetWid*0.5});
+                // $("#pricingTable1").css({"height":"50%"});
             }
         })
  
@@ -466,9 +467,10 @@ include_once "changeLang.php";
             var offsetHei = document.documentElement.clientHeight;
             console.log(offsetWid);
             console.log(offsetHei);
-            if(offsetWid<400){
+            if(offsetWid<450){
                 $("#imgLogo").css({"width":"60%","height":"60%"});
                 $("#aLogo").css({"width":offsetWid*0.5});
+                $("#pricingTable1").css({"height":offsetHei*0.5});                
             }
         }
         $(function() {
@@ -564,7 +566,7 @@ include_once "changeLang.php";
                             lang: 'zh',
                         },
                         success: function(msg) {
-                            location.replace(window.location.href);
+                            location.reload();
                         }
                     });
                     //中文转法语
@@ -578,7 +580,7 @@ include_once "changeLang.php";
                             lang: 'fr',
                         },
                         success: function(msg) {
-                            location.replace(window.location.href);
+                            location.reload();
                         }
                     });
                 }
@@ -686,10 +688,10 @@ include_once "changeLang.php";
                 <div id="_modalDialog_body" class="modal-body">
                     <!--  设置这个div的大小，超出部分显示滚动条 -->
                         <div class="row">
-                        <div class="col-md-8">
-                            <img id="product1Image" class="img_product" width="800px" height="530px" src="images/work-1.jpg" alt="work1">
+                        <div class="col-md-8 col-12">
+                            <img id="product1Image" class="img_product" width="800px" height="auto" src="images/work-1.jpg" alt="work1">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-12">
                             <h2>Introduction:</h2>
                             <br>
                             <p id="product1Description" style="font-size:20px"></p>

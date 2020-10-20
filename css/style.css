@@ -8186,7 +8186,7 @@ textarea.form-control {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#00dc94', GradientType=1 ); }
 @media (max-width: 767.98px) {
     .ftco-section {
-        padding: 6em 0; } }
+        padding: 2em 0; } }
 
 .ftco-bg-dark {
     background: #3c312e; }

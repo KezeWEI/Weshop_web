@@ -47,6 +47,8 @@ include_once "changeLang.php";
                     <li class="nav-item active"><a href="contact.php" class="nav-link"><?php echo $GLOBALS['L']['menu_contact'] ?></a></li>
 
                     <li class="nav-item cta"><a href="index.php#devis" class="nav-link"><span><?php echo $GLOBALS['L']['menu_budget'] ?></span></a></li>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <li class="nav-item cta"><a class="nav-link" href="javascript:void(0);" onclick="changeLang()">中文/Fr</a></li>
                 </ul>
             </div>
         </div>
@@ -212,6 +214,13 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
+          if(localStorage.getItem("lang") =="zh"){
+              var lang = "zh-CN";
+          }else if(localStorage.getItem("lang") =="fr"){
+              var lang = "fr";
+          }else{
+              var lang = navigator.language;
+          }
             $.ajax({
                 url: 'changeData.php',
                 type: 'post',
@@ -231,6 +240,56 @@ include_once "changeLang.php";
                 }
             })
         });
+
+        function changeLang() {
+            if (localStorage.getItem("lang") != null) {
+                //有转换记录
+                //alert("检测成功,当前为:" + localStorage.getItem("lang"));
+                //法语转中文
+                if (localStorage.getItem("lang") == "fr") {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'zh',
+                        },
+                        success : function(msg){
+                            location.reload();
+                        }
+                    });
+                    //中文转法语
+                } else {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
+                    $.ajax({
+                        url: 'changeLang.php',
+                        type: 'post',
+                        data: {
+                            lang: 'fr',
+                        },
+                        success : function(msg){
+                            location.reload();
+                        }
+                    });
+                }
+            } else {
+                //第一次转换
+                // alert("未检测到");
+                var lang = navigator.language;
+                //已经是中文页面，转换语言显示法语
+                if (lang == "zh-CN") {
+                    var language = "fr";
+                    localStorage.setItem("lang", language);
+                } else {
+                    var language = "zh";
+                    localStorage.setItem("lang", language);
+                }
+            }
+        }
 
         (function($) {
             setInterval(function() {
