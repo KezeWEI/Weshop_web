@@ -4,7 +4,7 @@
     $password = "022611";
     $dbname = "myDB";
 
-    $server_ip = "192.168.1.120";
+    $server_ip = "192.168.43.224";
     $server_port = "2000";
     
 ?>
