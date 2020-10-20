@@ -1159,42 +1159,77 @@ include_once "changeLang.php";
     <!--检测是否有人工在线-->
     <?php
     require 'conn.php';
-    $host = '192.168.1.120';
+    $host = '192.168.1.153';
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
-        echo '<script>console.log ("server is online");</script>';
-        echo '<script>online = 1;</script>';
+        $online = 1;
+        echo '<script>console.log ("client is online");</script>';
     } else if ($res[0] == 0) {
-        echo '<script>online = 0;</script>';
-        echo '<script>console.log ("server is offline");</script>';
+        $online = 0;
+        echo '<script>console.log ("client is offline");</script>';
     } else {
         echo '<script>console.log ("error");</script>';
     }
     ?>
-    <!--检测IP,这个可能会让网页运行变慢，考虑异步或者开启客服再访问！！！！！！！！！！！！！！！！-->
+    <!--检测IP-->
     <script src="http://pv.sohu.com/cityjson?ie=utf-8">
     </script>
     <script type="text/javascript">
-    console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
-    var ip_client = returnCitySN["cip"];
+        //console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+        var ip_client = returnCitySN["cip"];
     </script>
     <!--另一种通过php检测ip的方法-->
     <?php
-    $ip_local = gethostbyname($_ENV['COMPUTERNAME']); //获取服务端的局域网IP 
-    $externalContent = file_get_contents('http://checkip.dyndns.com/');
-    preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-    $ip_extern = $m[1] //赋值客户端外网IP 
+    require_once 'IP.php';
     ?>
     <script>
-    var ip_intern = "<?php echo $ip_local; ?>";
+        var ip_local = "<?php echo $ip_local; ?>";
+        var online = "<?php echo $online; ?>";
     </script>
 
     <!--客服人工回复-->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/socket.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="js/home.chat.io.js">
+    </script>
     <!--客服人工回复部分结束-->
+    <script>
+//        $(window).unload(function () {
+//            window.alert("获取到了页面要关闭的事件了！");
+//        });
+//        $(window).bind('beforeunload', function () {
+//            window.alert("hehe");
+//            console.log("hehe???");
+//            //socket.emit("client onload", "...");
+//        });
+        //$(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以下是历史消息</small></div>");
+<?php
+require 'reload_chat_history.php';
+
+foreach ($arrs as $arr) {
+//print_r ($arr);
+//echo '<br>';
+    if ($arr['others'] == 'reply') {
+        //echo '<script>reply ("' + $msg + '");</script>'; <= ne marche pas
+        ?>
+
+                reply("<? echo $arr['msg']; ?>");
+
+    <?php } else { ?>
+
+                repeatClientMsg("<? echo $arr['msg']; ?>");
+
+        <?php
+    }
+}
+?>
+
+        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以上是历史消息</small></div>");
+        $(document).ready(function () {
+            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        });
+    </script>
 
 
 
