@@ -6208,7 +6208,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-    margin-top: 3rem !important; }
+    margin-top: 1rem !important; }
 
 .mr-5,
 .mx-5 {
@@ -7334,14 +7334,13 @@ h1, h2, h3, h4, h5,
     z-index: 3; }
 @media (max-width: 991.98px) {
     .ftco-navbar-light {
-        background: #000 !important;
         position: relative;
         top: 0; } }
 .ftco-navbar-light .navbar-brand {
     color: #fff; }
 @media (min-width: 768px) {
     .ftco-navbar-light .navbar-brand {
-        color: #000; } }
+        color: #fff; } }
 @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav {
         padding-bottom: 20px; } }
@@ -7353,11 +7352,11 @@ h1, h2, h3, h4, h5,
     padding-right: 20px;
     text-transform: uppercase;
     font-weight: 400;
-    color: #fff;
+    color: #000;
     opacity: 1 !important; }
 @media (min-width: 992px) {
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
-        color: #000; } }
+        color: #212529; } }
 @media (max-width: 767.98px) {
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
         padding-left: 0; } }
@@ -7368,7 +7367,8 @@ h1, h2, h3, h4, h5,
     background: #fff;
     -webkit-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
-    box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41); }
+    box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41); 
+}
 .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator {
     position: relative;
     margin-left: 20px;
@@ -7389,7 +7389,7 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator:before {
         display: none; } }
 .ftco-navbar-light .navbar-nav > .nav-item.cta > a {
-    color: #000;
+    color: #2f89fc;
     border: 1px solid #2f89fc;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -7415,7 +7415,7 @@ h1, h2, h3, h4, h5,
     color: #2f89fc; }
 .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -7492,7 +7492,7 @@ h1, h2, h3, h4, h5,
     -o-transition: .3s all ease-out;
     transition: .3s all ease-out; }
 .ftco-navbar-light.scrolled .navbar-brand {
-    color: #000; }
+    color: #fff; }
 
 .navbar-brand {
     font-weight: 700;
@@ -7771,7 +7771,7 @@ h1, h2, h3, h4, h5,
 
 .services-wrap {
     width: 100%;
-    padding: 5% 25% 5% 10%; }
+    padding: 5% 5% 5% 10%; }
 .services-wrap .list-services {
     display: block;
     margin-bottom: 30px; }

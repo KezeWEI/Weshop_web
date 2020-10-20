@@ -31,13 +31,14 @@ include_once "changeLang.php";
 
 <body>
     <!--导航栏-->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
+            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
 
+            
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.php" class="nav-link"><?php echo $GLOBALS['L']['menu_index'] ?></a></li>
@@ -117,9 +118,9 @@ include_once "changeLang.php";
     <section class="ftco-section ftco-services">
         <div class="mt-5">
             <div class="row d-flex no-gutters">
-                <div class="col-md-6 img ftco-animate" style="background-image: url(images/about.jpg);">
+                <div class="col-md-6 col-0 img ftco-animate" style="background-image: url(images/about.jpg);">
                 </div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-6 col-12 d-flex">
                     <div class="services-wrap">
                         <div class="heading-section mb-5 ftco-animate">
                             <h2 class="mb-2"><?php echo $GLOBALS['L']['why_chose_us'] ?></h2>
@@ -127,7 +128,7 @@ include_once "changeLang.php";
                         </div>
                         <div class="list-services d-flex ftco-animate">
                             <div class="icon d-flex justify-content-center align-items-center">
-                                <span><img class="icon" src="images/nf515.png"></span>
+                                <span><img id="imgIcon1" class="icon" src="images/nf515.png"></span>
                             </div>
                             <div class="text">
                                 <h3><?php echo $GLOBALS['L']['our_software'] ?></h3>
@@ -136,7 +137,7 @@ include_once "changeLang.php";
                         </div>
                         <div class="list-services d-flex ftco-animate">
                             <div class="icon d-flex justify-content-center align-items-center">
-                                <span><img class="icon" src="images/client.png"></span>
+                                <span><img id="imgIcon2" class="icon" src="images/client.png"></span>
                             </div>
                             <div class="text">
                                 <h3><?php echo $GLOBALS['L']['our_equipment'] ?></h3>
@@ -145,7 +146,7 @@ include_once "changeLang.php";
                         </div>
                         <div class="list-services d-flex ftco-animate">
                             <div class="icon d-flex justify-content-center align-items-center">
-                                <span><img class="icon" src="images/service.png"></span>
+                                <span><img id="imgIcon3" class="icon" src="images/service.png"></span>
                             </div>
                             <div class="text">
                                 <h3><?php echo $GLOBALS['L']['our_service'] ?></h3>
@@ -164,7 +165,8 @@ include_once "changeLang.php";
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="row">
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <!-- bootstrap 4.0删除了col-xs（极小）,用col-*代替！ -->
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="2">0</strong>
@@ -172,7 +174,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="1500">0</strong>
@@ -180,7 +182,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="6">0</strong>
@@ -188,7 +190,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="3000">0</strong>
@@ -213,7 +215,7 @@ include_once "changeLang.php";
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 ftco-animate">
+                <div class="col-md-4 col-12 ftco-animate">
                     <div class="work-entry">
                         <a id="product1_img" data-toggle="modal" data-target="#product1" class="img" style="background-image: url(images/work1.png);">
                             <div class="text d-flex justify-content-center align-items-center">
@@ -224,7 +226,7 @@ include_once "changeLang.php";
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 ftco-animate">
+                <div class="col-md-4 col-12 ftco-animate">
                     <div class="work-entry">
                         <a id="product2_img" data-toggle="modal" data-target="#product2" class="img" style="background-image: url(images/work2.png);">
                             <div class="text d-flex justify-content-center align-items-center">
@@ -235,7 +237,7 @@ include_once "changeLang.php";
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 ftco-animate">
+                <div class="col-md-4 col-12 ftco-animate">
                     <div class="work-entry">
                         <a id="product3_img" data-toggle="modal" data-target="#product3" class="img" style="background-image: url(images/work3.png);">
                             <div class="text d-flex justify-content-center align-items-center">
@@ -266,7 +268,7 @@ include_once "changeLang.php";
             <div id="beforeSubmit">
                 <!-- 设置空的target阻止默认提交表单以后刷新 -->
                 <form id="formDevis" class="row" style="text-align:center; margin-left:20px; margin-right:20px" method="post" action="storeDevis.php" target="nm_iframe">
-                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="pricing-table">
                             <h3><?php echo $GLOBALS['L']['main_product'] ?></h3>
                             <HR>
@@ -285,7 +287,7 @@ include_once "changeLang.php";
                         </div>
                         </br>
                     </div>
-                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="pricing-table">
                             <h3><?php echo $GLOBALS['L']['other_product'] ?></h3>
                             <HR>
@@ -315,7 +317,7 @@ include_once "changeLang.php";
                         </div>
                         </br>
                     </div>
-                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="colForm col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="pricing-table">
                             <h3><?php echo $GLOBALS['L']['budget_info'] ?></h3>
                             <HR>
@@ -449,8 +451,28 @@ include_once "changeLang.php";
             $("#messagePrint").html($("#message").val());
         });
 
-
+                
+        $(window).resize(function(){
+            var offsetWid = document.documentElement.clientWidth;
+            if(offsetWid<400){
+                $("#imgLogo").css({"width":"60%","height":"60%"});
+                $("#aLogo").css({"width":offsetWid*0.5});
+            }
+        })
+ 
+        function watchChangeSize (){
+            //可视区的宽/高(DOM)
+            var offsetWid = document.documentElement.clientWidth;
+            var offsetHei = document.documentElement.clientHeight;
+            console.log(offsetWid);
+            console.log(offsetHei);
+            if(offsetWid<400){
+                $("#imgLogo").css({"width":"60%","height":"60%"});
+                $("#aLogo").css({"width":offsetWid*0.5});
+            }
+        }
         $(function() {
+            watchChangeSize();
             //修改
             //逻辑顺序：没有切语言之前，本地变量localStorage.getItem("lang")没有值，自动读取浏览器语言
             //一旦切换过一次语言，本地保存语言localStorage.getItem("lang")为zh或fr。
@@ -532,13 +554,9 @@ include_once "changeLang.php";
         //修改
         function changeLang() {
             if (localStorage.getItem("lang") != null) {
-                //有转换记录
-                //alert("检测成功,当前为:" + localStorage.getItem("lang"));
-                //法语转中文
                 if (localStorage.getItem("lang") == "fr") {
                     var language = "zh";
                     localStorage.setItem("lang", language);
-                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
                     $.ajax({
                         url: 'changeLang.php',
                         type: 'post',
@@ -553,7 +571,6 @@ include_once "changeLang.php";
                 } else {
                     var language = "fr";
                     localStorage.setItem("lang", language);
-                    // alert("转换成功，转换为：" + localStorage.getItem("lang"));
                     $.ajax({
                         url: 'changeLang.php',
                         type: 'post',
@@ -567,7 +584,6 @@ include_once "changeLang.php";
                 }
             } else {
                 //第一次转换
-                // alert("未检测到");
                 var lang = navigator.language;
                 //已经是中文页面，转换语言显示法语
                 if (lang == "zh-CN") {
@@ -903,7 +919,7 @@ include_once "changeLang.php";
                 $(".chatBox-content-demo").css("height", 448);
                 $(".chatBox-list").css("height", 495);
                 $(".chatBox-kuang").css("height", 495);
-                // !import不可覆盖，以删除
+                // !import不可覆盖，可以删除
                 $(".div-textarea").css("width", 245);
             }
         }
