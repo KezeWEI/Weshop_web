@@ -484,7 +484,7 @@ pre code {
 .container {
     width: 100%;
     padding-right: 15px;
-    /* padding-left: 15px; */
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto; }
 @media (min-width: 576px) {
@@ -3288,6 +3288,7 @@ input[type="button"].btn-block {
     flex-wrap: wrap;
     -webkit-box-align: center;
     -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }

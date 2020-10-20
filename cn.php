@@ -1,6 +1,7 @@
 <?php
     $lan = array(
         //accueil
+        'menu'=>'导航栏',
         'menu_index'=>'首页',
         'menu_presentation'=>'公司介绍',
         'menu_product'=>'产品',
@@ -135,8 +136,11 @@
         'footer_article'=>'最新推文',
         'footer_contact'=>'联系方式',
         'footer_right'=>'Tous droits réservés | Weshop收银软件公司版权所有',
-        'chat_popup'=>'您好，您需要帮助吗？'
+        'chat_history'=>'以上是历史消息',
+        'chat_popup'=>'您好，您需要帮助吗？',
+        'chat_msg_default'=>'您好，欢迎您浏览我们的网页',
         
     );
     // $data = json_encode($lang);
     // echo $data;
+?>

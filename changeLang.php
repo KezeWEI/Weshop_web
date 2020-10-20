@@ -1,5 +1,6 @@
 <?php
 session_start();
+    if(!isset($_POST['lang'])) $_POST['lang']="";
 $lang=$_POST['lang'];
 if($lang!=null){
     // echo "收到lang：".$lang;
@@ -31,3 +32,4 @@ if (isset($_SESSION['lang'])) {
         $GLOBALS['L'] = $lan;
     }
 }
+?>

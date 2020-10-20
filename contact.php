@@ -32,7 +32,7 @@ include_once "changeLang.php";
     <!--导航栏-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
+            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
@@ -200,8 +200,9 @@ include_once "changeLang.php";
 
     <!--客服悬浮窗-->
     <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
-        <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
-            <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
+        <div
+            class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
+            <div class="rd-notice-content"><?php echo $GLOBALS['L']['chat_popup'] ?></div>
         </div>
         <div class="animated-circles">
             <div class="circle c-1"></div>
@@ -210,11 +211,9 @@ include_once "changeLang.php";
         </div>
     </div>
     <!--客服悬浮窗结束-->
-
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
-            watchChangeSize();
             if (localStorage.getItem("lang") == "zh") {
                 var lang = "zh-CN";
             } else if (localStorage.getItem("lang") == "fr") {
@@ -241,38 +240,6 @@ include_once "changeLang.php";
                 }
             })
         });
-
-        $(window).resize(function() {
-        var offsetWid = document.documentElement.clientWidth;
-        var offsetHei = document.documentElement.clientHeight;
-        if (offsetWid < 450) {
-            $("#imgLogo").css({
-                "width": "60%",
-                "height": "60%"
-            });
-            $("#aLogo").css({
-                "width": offsetWid * 0.5
-            });
-        }
-    })
-
-    function watchChangeSize() {
-        //可视区的宽/高(DOM)
-        var offsetWid = document.documentElement.clientWidth;
-        var offsetHei = document.documentElement.clientHeight;
-        if (offsetWid < 450) {
-            $("#imgLogo").css({
-                "width": "60%",
-                "height": "60%"
-            });
-            $("#aLogo").css({
-                "width": offsetWid * 0.5
-            });
-            $("#pricingTable1").css({
-                "height": offsetHei * 0.5
-            });
-        }
-    }
 
         function changeLang() {
             if (localStorage.getItem("lang") != null) {
@@ -351,7 +318,7 @@ include_once "changeLang.php";
     </script>
     <!--客服悬浮窗JS结束-->
 
-    <!-- 客服聊天框 -->
+<!-- 客服聊天框 -->
     <div class="chatContainer" style="z-index: 100;">
         <div class="chat-message-num"></div>
         <div class="chatBox" ref="chatBox" style="display: none">
@@ -377,7 +344,7 @@ include_once "changeLang.php";
                                 <div class="left">
                                     <div class="chat-avatars"><img src="static/icon01.png" alt="头像" /></div>
                                     <div class="chat-message">
-                                        Bonjour, bienvenue chez WeShop.
+                                        <?php echo $GLOBALS['L']['chat_msg_default'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -393,43 +360,75 @@ include_once "changeLang.php";
                                 <i class="iconfont icon-biaoqing"></i>
                             </button>
                             <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
-                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png" name="file" id="inputImage" class="hidden">
+                                <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
+                                    name="file" id="inputImage" class="hidden">
                                 <i class="iconfont icon-tuxiang"></i>
                             </label>
-                            <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i></button>
+                            <button id="chat-fasong" class="btn-default-styles"><i
+                                    class="iconfont icon-fasong"></i></button>
                         </div>
                         <div class="biaoqing-photo">
                             <ul>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span></li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -601,7 +600,7 @@ include_once "changeLang.php";
     <!--检测是否有人工在线-->
     <?php
     require 'conn.php';
-    $host = '192.168.1.153';
+    $host = '192.168.1.120';
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
@@ -624,10 +623,13 @@ include_once "changeLang.php";
     <!--另一种通过php检测ip的方法-->
     <?php
     require_once 'IP.php';
+    require_once 'config.php';
     ?>
     <script>
         var ip_local = "<?php echo $ip_local; ?>";
         var online = "<?php echo $online; ?>";
+        var server_ip = "<?php echo $server_ip; ?>";
+        var server_port = "<?php echo $server_port; ?>";
     </script>
 
     <!--客服人工回复-->
@@ -656,18 +658,18 @@ foreach ($arrs as $arr) {
         //echo '<script>reply ("' + $msg + '");</script>'; <= ne marche pas
         ?>
 
-                reply("<? echo $arr['msg']; ?>");
+                reply("<?php echo $arr['msg']; ?>");
 
     <?php } else { ?>
 
-                repeatClientMsg("<? echo $arr['msg']; ?>");
+                repeatClientMsg("<?php echo $arr['msg']; ?>");
 
         <?php
     }
 }
 ?>
 
-        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以上是历史消息</small></div>");
+        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'><?php echo $GLOBALS['L']['chat_history'] ?></small></div>");
         $(document).ready(function () {
             $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
         });

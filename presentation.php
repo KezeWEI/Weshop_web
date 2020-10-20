@@ -34,7 +34,7 @@ include_once "changeLang.php";
     <!--导航栏-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a id="aLogo" href="index.php"><img src="images/title.png" id="imgLogo" class="Accueil"></a>
+            <a href="index.php"><img src="images/title.png" class="Accueil"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu">Menu</span>
             </button>
@@ -68,15 +68,12 @@ include_once "changeLang.php";
             </div>
         </div>
     </div>
-    <!--分割线-->
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);"
-        data-stellar-background-ratio="0.5">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-11">
                     <div class="row">
-                        <!-- bootstrap 4.0删除了col-xs（极小）,用col-*代替！ -->
-                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="2">0</strong>
@@ -84,7 +81,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="1500">0</strong>
@@ -92,7 +89,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="6">0</strong>
@@ -100,7 +97,7 @@ include_once "changeLang.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-6 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
                                     <strong class="number" data-number="3000">0</strong>
@@ -113,15 +110,14 @@ include_once "changeLang.php";
             </div>
         </div>
     </section>
-    <!--分割线部分结束-->
 
 
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation1.jpg);">
+                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation1.jpg);">
                 </div>
-                <div class="col-md-6 col-12 ftco-animate p-md-5">
+                <div class="col-md-6 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -145,7 +141,8 @@ include_once "changeLang.php";
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-                <div class="col-md-6 col-12 ftco-animate p-md-5">
+
+                <div class="col-md-6 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -163,7 +160,7 @@ include_once "changeLang.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation2.jpg);">
+                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation2.jpg);">
                 </div>
             </div>
         </div>
@@ -172,12 +169,13 @@ include_once "changeLang.php";
     <section class="ftco-section">
         <div class="container">
             <div class="row d-md-flex">
-                <div class="col-md-6 col-12 ftco-animate img about-image" style="background-image: url(images/presentation3.jpg);">
+                <div class="col-md-6 ftco-animate img about-image" style="background-image: url(images/presentation3.jpg);">
                 </div>
-                <div class="col-md-6 col-12 ftco-animate p-md-5">
+                <div class="col-md-6 ftco-animate p-md-5">
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
                             </div>
                         </div>
                         <div class="col-md-12 d-flex align-items-center">
@@ -330,7 +328,7 @@ include_once "changeLang.php";
     <!--客服悬浮窗-->
     <div class="livechat-girl animated"> <img class="girl" src="images/en_3.png">
         <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
-            <div class="rd-notice-content">Bonjour, je peut vous aider?</div>
+            <div class="rd-notice-content"><?php echo $GLOBALS['L']['chat_popup'] ?></div>
         </div>
         <div class="animated-circles">
             <div class="circle c-1"></div>
@@ -342,7 +340,6 @@ include_once "changeLang.php";
     <!--客服悬浮窗JS-->
     <script type="text/javascript">
         $(function() {
-            watchChangeSize();
             if (localStorage.getItem("lang") == "zh") {
                 var lang = "zh-CN";
             } else if (localStorage.getItem("lang") == "fr") {
@@ -371,38 +368,6 @@ include_once "changeLang.php";
                 }
             })
         });
-
-        $(window).resize(function() {
-        var offsetWid = document.documentElement.clientWidth;
-        var offsetHei = document.documentElement.clientHeight;
-        if (offsetWid < 450) {
-            $("#imgLogo").css({
-                "width": "60%",
-                "height": "60%"
-            });
-            $("#aLogo").css({
-                "width": offsetWid * 0.5
-            });
-        }
-    })
-
-    function watchChangeSize() {
-        //可视区的宽/高(DOM)
-        var offsetWid = document.documentElement.clientWidth;
-        var offsetHei = document.documentElement.clientHeight;
-        if (offsetWid < 450) {
-            $("#imgLogo").css({
-                "width": "60%",
-                "height": "60%"
-            });
-            $("#aLogo").css({
-                "width": offsetWid * 0.5
-            });
-            $("#pricingTable1").css({
-                "height": offsetHei * 0.5
-            });
-        }
-    }
 
         function changeLang() {
             if (localStorage.getItem("lang") != null) {
@@ -507,7 +472,7 @@ include_once "changeLang.php";
                                 <div class="left">
                                     <div class="chat-avatars"><img src="static/icon01.png" alt="头像" /></div>
                                     <div class="chat-message">
-                                        Bonjour, bienvenue chez WeShop.
+                                        <?php echo $GLOBALS['L']['chat_msg_default'] ?>
                                     </div>
                                 </div>
                             </div>
@@ -530,36 +495,66 @@ include_once "changeLang.php";
                         </div>
                         <div class="biaoqing-photo">
                             <ul>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span></li>
-                                <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span></li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
+                                </li>
+                                <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -731,7 +726,7 @@ include_once "changeLang.php";
     <!--检测是否有人工在线-->
     <?php
     require 'conn.php';
-    $host = '192.168.1.153';
+    $host = '192.168.1.100';
     $status = mysqli_query($conn, "SELECT COUNT(isOnline) FROM adminlist WHERE isOnline = 1");
     $res = mysqli_fetch_array($status);
     if ($res[0] != 0) {
@@ -754,10 +749,13 @@ include_once "changeLang.php";
     <!--另一种通过php检测ip的方法-->
     <?php
     require_once 'IP.php';
+    require_once 'config.php';
     ?>
     <script>
         var ip_local = "<?php echo $ip_local; ?>";
         var online = "<?php echo $online; ?>";
+        var server_ip = "<?php echo $server_ip; ?>";
+        var server_port = "<?php echo $server_port; ?>";
     </script>
 
     <!--客服人工回复-->
@@ -767,38 +765,38 @@ include_once "changeLang.php";
     </script>
     <!--客服人工回复部分结束-->
     <script>
-//        $(window).unload(function () {
-//            window.alert("获取到了页面要关闭的事件了！");
-//        });
-//        $(window).bind('beforeunload', function () {
-//            window.alert("hehe");
-//            console.log("hehe???");
-//            //socket.emit("client onload", "...");
-//        });
+        //        $(window).unload(function () {
+        //            window.alert("获取到了页面要关闭的事件了！");
+        //        });
+        //        $(window).bind('beforeunload', function () {
+        //            window.alert("hehe");
+        //            console.log("hehe???");
+        //            //socket.emit("client onload", "...");
+        //        });
         //$(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以下是历史消息</small></div>");
-<?php
-require 'reload_chat_history.php';
+        <?php
+        require 'reload_chat_history.php';
 
-foreach ($arrs as $arr) {
-//print_r ($arr);
-//echo '<br>';
-    if ($arr['others'] == 'reply') {
-        //echo '<script>reply ("' + $msg + '");</script>'; <= ne marche pas
+        foreach ($arrs as $arr) {
+            //print_r ($arr);
+            //echo '<br>';
+            if ($arr['others'] == 'reply') {
+                //echo '<script>reply ("' + $msg + '");</script>'; <= ne marche pas
         ?>
 
-                reply("<? echo $arr['msg']; ?>");
+                reply("<?php echo $arr['msg']; ?>");
 
-    <?php } else { ?>
+            <?php } else { ?>
 
-                repeatClientMsg("<? echo $arr['msg']; ?>");
+                repeatClientMsg("<?php echo $arr['msg']; ?>");
 
         <?php
-    }
-}
-?>
+            }
+        }
+        ?>
 
-        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'>以上是历史消息</small></div>");
-        $(document).ready(function () {
+        $(".chatBox-content-demo").append("<div class='author-name'><small class='chat-date'><?php echo $GLOBALS['L']['chat_history'] ?></small></div>");
+        $(document).ready(function() {
             $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
         });
     </script>

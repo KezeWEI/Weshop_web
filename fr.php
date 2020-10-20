@@ -1,6 +1,7 @@
 <?php
     $lan = array(
         //accueil
+        'menu'=>'MENU',
         'menu_index'=>'Accueil',
         'menu_presentation'=>'Présentation',
         'menu_product'=>'Produits',
@@ -135,8 +136,11 @@
         'footer_article'=>'Dernières nouvelles',
         'footer_contact'=>'Nous contacter',
         'footer_right'=>'Tous droits réservés | Pour plus d’informations voir SARL WESHOP',
-        'chat_popup'=>'Bonjour, je peux vous aider ?'
+        'chat_history'=>'Msgs historiques dessus',
+        'chat_popup'=>'Bonjour, je peux vous aider ?',
+        'chat_msg_default'=>'Bonjour, bienvenue chez WeShop !',
         
     );
     // $data = json_encode($lang);
     // echo $data;
+?>

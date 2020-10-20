@@ -1,4 +1,4 @@
-const socket = $.websocket('ws://192.168.1.153:2000');
+const socket = $.websocket('ws://'+server_ip+':'+server_port);
 var username = ip_local;
 var socketID;
 
